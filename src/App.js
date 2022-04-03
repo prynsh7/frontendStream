@@ -14,6 +14,17 @@ import Notification from './components/Admin/Notification/Notification';
 import Home from './Pages/Home';
 import Auth from './Pages/Auth';
 import Signin from './Pages/SignIn';
+import Upload from './Pages/Upload';
+import Statistics from './Pages/Statistics';
+import ManageVideos from './Pages/ManageVideos';
+import PlayList from './Pages/PlayList';
+import Video from './Pages/Video';
+import Settings from './Pages/Settings';
+
+
+
+
+
 
 
 
@@ -33,8 +44,12 @@ function App() {
         <Route path="/signin" element={<Signin />} />
 
         <Route path="/" element={<Home />} />
-
-
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/statistics" element={<Statistics />} />
+        <Route path="/manage-videos" element={<ManageVideos />} />
+        <Route path="/playlist" element={<PlayList />} />
+        <Route path="/video" element={<Video />} />
+        <Route path="/settings" element={<Settings />} />
 
       </Routes>
 
