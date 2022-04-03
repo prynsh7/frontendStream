@@ -8,7 +8,7 @@ import Toggle from '../../User/Toogle/Toogle'
 function ActivePlans(props) {
     const [addOn, setAddon] = useState();
   return (
-    <div>
+    <div className='ActivePlans'>
         <div className='flex flex-col justify-center px-4'>
             <div className='flex flex-col'>
                 <div>
@@ -16,7 +16,7 @@ function ActivePlans(props) {
                     <hr className='w-[50%] border-t-black mt-1' />
                 </div>
                 <div className='flex justify-between gap-2 items-center'>
-                    <h1 className='text-[#C5C7CD]'>
+                    <h1 className='text-[#787C87]'>
                         Gold plan (100GB) - <span className='text-[#4954CB]'>$59/onetime</span>
                     </h1>
                     <div className='flex justify-between items-center gap-2'>
@@ -45,12 +45,12 @@ function ActivePlans(props) {
                     </div>
                 </div>
                 })
-                 : null }
+                 :<div>No addons present</div> }
                 
                 
             </div>
             <hr className='border-t-black mt-8' />
-            <div className='flex justify-end gap-4 items-center my-2'>
+            <div className='flex justify-end gap-4 items-center my-2 buttonContainer'>
                 <button onClick={() => props.showAddonForm('addon')} className='text-[#1E1E1F] bg-[#F5F8FA] rounded-md py-2 px-4'>+ Add Addon</button>
                 <button onClick={() => props.showPlanForm('plan')} className='text-[#1E1E1F] bg-[#F5F8FA] rounded-md py-2 px-4'>+ Add Plan</button>
             </div>

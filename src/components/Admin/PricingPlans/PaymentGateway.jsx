@@ -23,7 +23,7 @@ const PaymentGateway = () => {
                     <button className='px-6 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Save</button>
                     <div className='flex gap-1 items-center'>
                         <input type="checkbox" className="checkbox w-4 h-4 cursor-pointer" />
-                        <h1>Enable sandbox/testing node</h1>
+                        <h1 className='font-bold'>Enable sandbox/testing node</h1>
                     </div>
                 </div>
             </form>

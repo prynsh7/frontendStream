@@ -6,11 +6,11 @@ import Sidebar from './Sidebar'
 function Dashboard() {
   return (
     <div>
-        <div className="flex flex-cols-2">
+        <div className="Dashboard flex flex-cols-2">
             <div className="w-[20%] border-black">
                 <Sidebar />
             </div>
-            <div className="w-[80%]">
+            <div className="w-[80%] mr-[50px]">
                 <Nav />
                 <Overview />
             </div>
