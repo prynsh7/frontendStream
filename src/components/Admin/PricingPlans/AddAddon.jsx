@@ -15,8 +15,8 @@ function AddAddon() {
 
 
   return (
-    <div>
-        <form className='grid grid-cols-3 m-4'>
+    <div className='AddAddon'>
+        <form className='grid m-4'>
             <div className='col-span-2'>
                 <div className='flex gap-2 justify-between'>
                     <Input name={''} placeholder={'Enter Addon name'} type={'text'} onChange={(e) => setName(e.target.value)} id={''} value={name} />
@@ -42,18 +42,15 @@ function AddAddon() {
                     <Select name={'Enable for these plans by default'} />
                 </div>
                 <div className='flex gap-2 justify-between'>
-                    <Select name={'Free Trial (7 Days)    YES/NO'} />
+                    <Select name={'Free Trial (7 Days) YES/NO'} />
                 </div>
-                <div className='flex my-2 gap-2 justify-between items-center'>
+                <div className='flex my-2 gap-2 items-center'>
                     <input type="checkbox" />
                     <span className='text-xs whitespace-nowrap text-black font-semibold'>Make it private and don&apos;t show this within user panel</span>
                 </div>
                 <div className='flex items-start my-4'>
                     <button className='px-6 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded' >Add</button>
                 </div>
-            </div>
-            <div className='span-col-1'>
-                <BiCamera className='mt-3 ml-3 cursor-pointer' size={25} />
             </div>
         </form>
     </div>
