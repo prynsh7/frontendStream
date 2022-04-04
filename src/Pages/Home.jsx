@@ -10,9 +10,12 @@ const home = () => {
                 <Sidebar />
             </div>
             <div className="sm:w-[96%] w-full">
+                <div className="w-[90%] m-auto">
                 <Navigation />
                 <Stats />
                 <PremiumAddons />
+
+                </div>
             </div>
         </div>
     )
