@@ -1,0 +1,54 @@
+.ManageUsers{
+    .customSelectHeight{
+        select{
+            height: 32px !important;
+            border-radius: 0px;
+        }
+    }
+
+    .headLeftPadding{
+        padding-right: 196px;
+    }
+
+    .selectbr5{
+        select{
+            border-radius: 5px;
+            width: 123px;
+            font-size: 11px;
+        }
+    }
+
+
+    .translateRight{
+        transform: translateX(27px);
+    }
+    .customInputHeight22{
+        input{
+            height: 22px;
+            width: 162px;
+            font-size: 11px;
+            border-radius: 4px;
+        }
+        button{
+            border-radius: 4px;
+            font-size: 11px;
+            height: 22px;
+        }
+    }
+}
+
+.Pagination{
+    li{
+        height: 20px;
+        width: 20px;
+        box-sizing: border-box;
+        padding: 0px;
+        a{
+            height: 20px;
+            width: 20px;
+            box-sizing: border-box;
+            padding: 3px 8px
+
+        }
+    }
+}

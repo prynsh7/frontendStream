@@ -21,7 +21,7 @@ function Sidebar() {
                     <img src='./Assets/ellipse_2.png' className='text-black cursor-pointer' alt='dooo' height='11px' width='11px' />
                     <img src='./Assets/ellipse_2.png' className='text-black cursor-pointer' alt='dooo' height='11px' width='11px' />
                 </div>
-                <ul className="space-y-2 flex flex-col gap-4 absolute top-32 w-[100%]">
+                <ul className="space-y-2 flex flex-col absolute top-32 w-[100%]">
                     <li className={`flex font-semibold items-center ${router.pathname === '/dashboard' ? bg : 'text-black'} from-[#14121F] to-[#8D8C92] px-1 py-3 gap-2 whitespace-nowrap`}>
                         <RiDashboardLine size={20} />
                         <a href='/dashboard' passHref>

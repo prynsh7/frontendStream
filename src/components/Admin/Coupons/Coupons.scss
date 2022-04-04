@@ -1,0 +1,26 @@
+.Header{
+    .fs-13{
+        font-size: 13px;
+    }
+
+    .fs-11{
+        font-size: 11px;
+    }
+    .br4{
+        border-radius: 4px;
+    }
+    input{
+        height: 20px;
+        padding-top: 3px;
+        width: 250px;
+        border-radius: 4px;
+    }
+
+    select{
+        border-radius: 0px;
+        height: 32px;
+        width: 52px;
+        padding-top: 3px;
+    }
+
+}

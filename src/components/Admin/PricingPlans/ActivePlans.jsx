@@ -51,8 +51,8 @@ function ActivePlans(props) {
             </div>
             <hr className='border-t-black mt-8' />
             <div className='flex justify-end gap-4 items-center my-2 buttonContainer'>
-                <button onClick={() => props.showAddonForm('addon')} className='text-[#1E1E1F] bg-[#F5F8FA] rounded-md py-2 px-4'>+ Add Addon</button>
-                <button onClick={() => props.showPlanForm('plan')} className='text-[#1E1E1F] bg-[#F5F8FA] rounded-md py-2 px-4'>+ Add Plan</button>
+                <button onClick={() => props.showAddonForm('addon')} className='text-[#1E1E1F] bg-[#F5F8FA] rounded-md my-2 py-2 px-4'>+ Add Addon</button>
+                <button onClick={() => props.showPlanForm('plan')} className='text-[#1E1E1F] bg-[#F5F8FA] rounded-md my-2 py-2 px-4'>+ Add Plan</button>
             </div>
         </div>
     </div>

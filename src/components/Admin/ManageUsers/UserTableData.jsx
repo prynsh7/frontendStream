@@ -11,8 +11,8 @@ const UserTableData = () => {
             <td className="border-t-0 2xl:px-6 px-2 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs whitespace-nowrap p-4">1</td>
             <th className="border-t-0 2xl:px-6 px-2 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                 <div className='flex justify-center items-center'>
-                    <div className='flex justify-center items-center rounded-full h-[29px] w-[29px]'>
-                        <img src='./Assets/space.png' height='29px' width='29px' className=" bg-white rounded-full border" alt="..." />
+                    <div className='flex justify-center items-center  h-[29px] w-[29px]'>
+                        <img src='./Assets/space.png' width='29px' className="h-[29px] w-[29px] bg-white rounded-full border" alt="..." />
                     </div>
                     <div className='grid items-center'>
                         <div className='flex justify-between'>

@@ -1,14 +1,15 @@
 import React from 'react'
+import './ManageUsers.scss'
 
 const Pagination = () => {
     return (
 
-        <nav className='bg-[#F6F8FC] p-1' aria-label="pagination-users">
-            <ul className="inline-flex items-center gap-2 bg-[#F6F8FC]">
+        <nav className='bg-[#F6F8FC] py-[5px] h-[32px] Pagination' aria-label="pagination-users">
+            <ul className="inline-flex items-center gap-2 bg-[#F6F8FC] h-25px">
                 <li>
-                    <a href="#" className="block py-1 px-2 ml-0 leading-tight text-gray-500 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">
+                    <a href="#" className="block py-1 text-center px-2 ml-0 leading-tight text-gray-500 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">
 
-                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"></path></svg>
+                        <svg className="w-3 h-3 my-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"></path></svg>
                     </a>
                 </li>
                 <li>
