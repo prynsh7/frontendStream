@@ -12,14 +12,14 @@ const Upload = () => {
                 <form action="" className="">
                     <div className="flex justify-between mx-4">
                         <input
-                            className="px-2 py-2 my-3 border-[1px] border-[#787C87] bg-[#F7F7F7] rounded-xl text-gray-700 placeholder-[#787C87] shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-gray-100 focus:border-transparent"
+                            className="w-[296px] h-[52px] px-2 py-2 my-3 bg-[#F4F7F9] rounded-xl text-gray-700 placeholder-[#787C87] shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-gray-100 focus:border-transparent"
                             type="text"
                             placeholder="Enter source video URLs" />
-                        <button type="submit" className="rounded-full border-[1px] border-[#787C87] text-[#1E1E1F] py-2 px-2 my-3 bg-[#F7F7F7]">Fetch videos</button>
+                        <button type="submit" className="w-[153px] h-[51px] rounded-full border-[1px] border-[#787C87] text-[#1E1E1F] py-2 px-2 my-3 bg-gradient-to-b from-[#F7F7F7] to-[#D6D7D9]">Fetch videos</button>
                     </div>
                     <h1 className="text-center">OR</h1>
-                    <div className="flex justify-center m-auto mx-4">
-                        <button className="rounded-full w-full flex justify-center border-[1px] border-[#787C87] text-[#1E1E1F] px-2 my-3 bg-[#F7F7F7] py-2 items-center">
+                    <div className="flex justify-center m-auto mx-4 w-[474px] h-[70px]">
+                        <button className=" rounded-full w-full flex justify-center border-[1px] border-[#787C87] text-[#1E1E1F] px-2 my-3 bg-gradient-to-b from-[#F7F7F7] to-[#D6D7D9] py-2 items-center">
                             <FiUpload className='text-black' />
                             <span className="ml-2 text-[#1E1E1F]">Upload Files</span>
                         </button>

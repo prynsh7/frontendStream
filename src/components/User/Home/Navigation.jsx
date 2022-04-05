@@ -37,10 +37,10 @@ const Navigation = () => {
                     <SideNav stylevalue={styleValue} />
                 </div >
                 <div className='flex justify-end'>
-                    {router.pathname === '/home' && (
-                        <div className='md:float-right hidden sm:flex'>
+                    {router.pathname === '/home'||'/' && (
+                        <div className='md:float-right hidden sm:flex items-center mt-1 mr-1'>
                             <a href='/upload' passHref>
-                                <button className='text-white md:text-lg whitespace-nowrap bg-black py-2 px-3 rounded-md'>+ Upload Video</button>
+                                <button className='text-white h-[40px] w-[151px] md:text-lg whitespace-nowrap bg-black py-2 px-3 rounded-md'>+ Upload Video</button>
                             </a>
                         </div>
                     )}
@@ -58,7 +58,7 @@ const Navigation = () => {
                         <div className='px-1 sm:px-2 cursor-pointer flex justify-center items-center'>
                             <a href='/statistics' passHref><GoGraph size={25} /></a>
                         </div>
-                        <div className='text-black px-1 sm:px-2 cursor-pointer flex justify-center text-center items-center' onClick={() => modalHandler()}>
+                        <div className='text-black px-1 sm:px-2 mt-3 cursor-pointer flex justify-center text-center items-center' onClick={() => modalHandler()}>
                             <h1 className='flex justify-center h-6 text-center items-center leading-6 text-2xl mb-2'>
                                 &#91;<span className='text-center text-sm'>xxx</span>&#93;
                             </h1>

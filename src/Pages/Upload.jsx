@@ -5,7 +5,7 @@ import Navigation from "../components/User/Home/Navigation"
 const upload = () => {
     return (
         <div className="flex flex-row">
-            <div className="w-[4%] sm:border-r-[1.5px] sm:border-black">
+            <div className="w-[4%] h-[100vh] sm:border-r-[1.5px] sm:border-black">
                 <Sidebar />
             </div>
             <div className="w-[96%]">
