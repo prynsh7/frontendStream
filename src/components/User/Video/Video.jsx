@@ -17,6 +17,7 @@ import AddCallToAction from "./AddCallToAction"
 // import PlayerTheme from "../Player/PlayerTheme"
 import Toggle from "../Toogle/Toogle"
 import { useState } from "react"
+import './Video.scss'
 // import SideNav from "../SideNav"
 
 const Video = () => {
@@ -33,7 +34,7 @@ const Video = () => {
     }
 
     return (
-        <div className="mt-16">
+        <div className="mt-9 w-[95%] ml-auto Video">
             {/* <SideNav stylevalue={styleValue} /> */}
             {/* Nav */}
             <div className='flex flex-row items-center gap-1 float-left absolute top-5 left-0 sm:hidden mx-8'>
@@ -52,7 +53,7 @@ const Video = () => {
             <div className="grid justify-items-stretch mx-8">
                 <div className="flex sm:items-center flex-col sm:flex-row sm:justify-around">
                     <div className="w-full sm:w-[35%] rounded-full justify-self-center items-center">
-                        <div className=" bg-[#000000] text-xs font-medium text-white text-center p-2 leading-none rounded-full">Uploading 45%...30 seconds left!</div>
+                        <div className=" bg-[#000000] w-[700px] h-[23px] text-xs font-medium text-white text-center p-2 leading-none rounded-full">Uploading 45%.........30 seconds left!</div>
                     </div>
                     <div className="sm:justify-self-start">
                         <button className="rounded-full w-full sm:w-auto border-[1px] border-[#787C87] text-[#1E1E1F] py-1 px-6 my-3 bg-gradient-to-b from-[#F7F7F7] to-[#D6D7D9]">Cancel</button>
@@ -62,9 +63,9 @@ const Video = () => {
 
             <div className="lg:grid lg:grid-cols-2 lg:divide-x-2 divide-black mt-4">
                 {/* COLUMN 1 --> Left */}
-                <div className="col-span-1 mb-8 lg:mb-0">
-                    <div className="mx-8">
-                        <div className="">
+                <div className="col-span-1 mb-8 lg:mb-0 pl-[20px] pr-[40px] mt-0">
+                    <div className="mx-8 mt-0">
+                        <div className="inputMargin">
                             <Input name={""} placeholder={"Enter video title here"} type={"text"} onChange={handleChange} id={""} value={""} />
                         </div>
                         <div className="flex flex-wrap justify-center sm:flex-nowrap gap-2 my-2">
@@ -123,47 +124,54 @@ const Video = () => {
                     <div className="mx-8">
                         <div className="">
                             <div className="flex justify-center flex-col items-center bg-[#F8F8F8]">
-                                <video className="flex flex-grow w-96 h-auto" src="" controls></video>
-                                <div className="flex justify-between items-center pt-2 px-2">
-                                    <h1>Video a</h1>
-                                    <MdOutlineContentCopy />
+                                <video className="flex flex-grow w-[100%] h-auto" src="" controls></video>
+                                <div className="flex flex-col justify-start w-[100%]">
+
+                                    <div className="flex justify-between items-center pt-2 px-2">
+                                        <h1 className="text-xs text-[#787C87]">Video link</h1>
+                                        <a href="" onClick={()=>{window.copy('https://dooo/md/watch')}}>
+                                        <MdOutlineContentCopy />
+                                        </a>
+                                    </div>
+                                    <span>
+                                    <a href="" className="px-2 text-sky-500 underline">
+                                        https://dooo/md/watch
+                                    </a>
+                                    </span>
+                                    
+                                    <div className="p-2">
+                                        <p className="text-xs text-[#787C87]">Filename</p>
+                                        <h1 className="text-black font-bold">Update.mp4</h1>
+                                    </div>
+
                                 </div>
                             </div>
 
-                            <a href="" className="px-2 text-sky-500 underline">
-                                https://dooo/md/watch
-                            </a>
-                            <div className="p-2">
-                                <p>Filename</p>
-                                <h1 className="text-black font-bold">Update.mp4</h1>
-                            </div>
                         </div>
                         <div className="m-auto w-full">
                             <Presets />
                         </div>
-                        <div className="flex flex-col-2 gap-2 mt-2">
-                            <div>
+                        <div className="flex flex-col-2 gap-10 justify-between mt-2 w-[100%]">
+                            <div className="w-[50%]">
                                 <h1 className="text-dark font-bold">Control bar color</h1>
-                                <div className="flex relative border rounded-l-md">
-                                    <span className="rounded-l-md inline-flex  items-center px-3 border-t bg-[#2b2a2a] text-gray-500 text-sm">
+                                <div className="flex relative border border-[#243c5a] rounded-[7px]">
+                                    <span className="rounded-l-md inline-flex  items-center px-3 bg-[#2b2a2a] text-gray-500 text-sm">
                                     </span>
                                     <input
                                         type="text"
                                         id="color-with-icon"
-                                        className="rounded-r-lg flex-1 outline-none w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400" name="text" placeholder="#2b2a2a" />
+                                        className="  rounded-r-lg flex-1 outline-none w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400" name="text" placeholder="#2b2a2a" />
                                 </div>
                             </div>
-                            <div>
+                            <div className="w-[50%]">
                                 <h1 className="text-dark font-bold">Play button color</h1>
-                                <div className="flex relative border rounded-l-md">
+                                <div className="flex relative border border-[#243c5a] rounded-[7px]">
                                     <span className="rounded-l-md inline-flex items-center px-3 bg-[#6d6a6a] border-gray-300 text-gray-500 text-sm">
                                     </span>
                                     <input
                                         type="text"
                                         id="color-with-icon"
-                                        className="flex-1 border-0 w-full outline-none py-2 px-4 bg-white text-gray-700 placeholder-gray-400 text-base"
-                                        name="text"
-                                        placeholder="#6d6a6a" />
+                                        className="rounded-r-lg flex-1 outline-none w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400" name="text" placeholder="#2b2a2a" />
                                 </div>
                             </div>
                         </div>
@@ -173,13 +181,13 @@ const Video = () => {
                         </div>
                         <div className="flex items-center justify-between">
                             <button
-                                className="text-[#1E1E1F] border-transparent border-gray-300 w-full px-4 bg-[#F5F8FA] placeholder-gray-400 flex items-center shadow-sm text-base focus:border-transparent py-2 my-3">
+                                className="rounded-[7px] text-[#1E1E1F] border-transparent border-gray-300 w-full px-4 bg-[#F5F8FA] placeholder-gray-400 flex items-center shadow-sm text-base focus:border-transparent py-2 my-3">
                                 <FiUpload size={20} className="mr-2" />
                                 During muted autoplay show this image on top of video
                             </button>
                             <RiDeleteBin6Line size={20} className="mx-1" />
                         </div>
-                        <div className="flex flex-col-2 gap-2 justify-between">
+                        <div className="flex flex-col-2 gap-7 justify-start">
                             <PutLogo />
                             <LogoPosition />
                         </div>
@@ -188,10 +196,10 @@ const Video = () => {
                             <input
                                 type="text"
                                 id="settings-preset"
-                                className="rounded-lg border-transparent border-gray-300 w-full px-4 bg-[#F5F8FA] text-gray-700 placeholder-gray-400 shadow-sm text-base focus:border-transparent"
+                                className="rounded-[7px] border-transparent border-gray-300 w-full px-4 bg-[#F5F8FA] text-gray-700 placeholder-gray-400 shadow-sm text-base focus:border-transparent"
                                 placeholder="Enter name to save these settings as a new preset"
                             />
-                            <button className="rounded-md font-bold border-[1px] border-[#787C87] text-[#4954CB] py-2 px-2 bg-[#F7F7F7]">Save</button>
+                            <button className="rounded-[7px] w-[65px] h-[45px] rounded-md font-bold text-[#4954CB] py-2 px-2 bg-[#F7F7F7]">SAVE</button>
                         </div>
                     </div>
                 </div>

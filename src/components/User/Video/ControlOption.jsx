@@ -1,12 +1,16 @@
-
+import { useState } from "react"
 
 const ControlOption = (props) => {
+    const [stat, setStat] = useState("YES");
+    const statToggle = ()=>{
+        setStat(stat==="YES"?"NO":"YES");
+    }
     return (
         <div className="flex justify-between items-center">
-            <div className="flex gap-2 items-center">
-                <input type="radio" className="h-4 w-4" />
+            <button className="flex justify-between" onClick={statToggle}>
                 <span>{props.label}</span>
-            </div>
+                <span>{stat}</span>
+            </button>
         </div>
     )
 }

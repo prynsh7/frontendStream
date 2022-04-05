@@ -6,7 +6,7 @@ const LogoPosition = () => {
     const [isList, setIsList] = useState(false)
 
     return (
-        <div className="my-2">
+        <div className="my-2 w-[45%]">
             <div onClick={() => setIsList(!isList)} className="p-4 shadow rounded-md bg-[#F5F8FA] text-sm font-medium leading-none text-gray-800 flex items-center justify-between cursor-pointer">
                 Logo position
                 {isList ? (

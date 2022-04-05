@@ -24,7 +24,7 @@ const Presets = () => {
         )}
       </div>
       {isList && (
-        <div className="absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
+        <div className="absolute overflow-auto mt-2 p-4 bg-white shadow rounded z-50">
           <DropdownItem category={"Preset 1"} />
           <DropdownItem category={"Preset 2"} />
           <DropdownItem category={"Preset 3"} />

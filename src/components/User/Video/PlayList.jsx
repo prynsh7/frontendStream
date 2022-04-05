@@ -25,7 +25,7 @@ const Playlist = () => {
                 )}
             </div>
             {isList && (
-                <div className="absolute overflow-auto mt-2 p-4 bg-white shadow rounded">
+                <div className="absolute overflow-auto mt-2 p-4 bg-white shadow rounded z-50">
                     <DropdownItem category={"Watch later"} />
                     <DropdownItem category={"Project Management"} />
                     <DropdownItem category={"NFT crypto"} />
