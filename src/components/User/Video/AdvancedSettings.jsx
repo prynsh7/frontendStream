@@ -25,9 +25,12 @@ const AdvancedSettings = () => {
             {isList && (
                 <div className="mt-2 p-4 bg-white rounded">
                     <div className="relative">
+                        <div className="grid grid-cols-2 gap-4">
+
                         {settingsOptionsAdvanced.map((element, index) => (
                             <SettingsOption key={index} checked={false} label={element} />
                         ))}
+                        </div>
                         <div className="flex justify-between items-center">
                             <div className="flex gap-2 items-center">
                                 <span className="ml-5">Video Size</span>

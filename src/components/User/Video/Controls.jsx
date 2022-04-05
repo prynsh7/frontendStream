@@ -23,7 +23,7 @@ const Controls = () => {
                 )}
             </div>
             {isList && (
-                <div className="relative mt-2 p-4 gap-2 grid grid-cols-2 bg-white shadow rounded">
+                <div className="relative mt-2 p-4 gap-4 grid grid-cols-2 bg-white shadow rounded">
                     {controls.map((element, index) => (
                         <div>
 

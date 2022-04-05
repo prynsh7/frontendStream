@@ -1,14 +1,16 @@
+import { useState } from "react";
 
 const SettingsOption = (props) => {
+    const [stat, setStat] = useState("OFF");
+    const statToggle = ()=>{
+        setStat(stat==="OFF"?"ON":"OFF");
+    }
     return (
         <div className="flex justify-between items-center">
-            <div className="flex gap-2 items-center">
-                <input type="radio" className="h-4 w-4" />
+            <button className="flex justify-between bg-gradient-to-b from-[#F7F7F7] to-[#D6D7D9] w-[100%] h-[45px] px-3 rounded-full text-center items-center" onClick={statToggle}>
                 <span>{props.label}</span>
-            </div>
-            <h1 className={`${props.checked ? 'text-green-600' : 'text-red-600'}`}>
-                {props.checked ? 'ON' : 'OFF'}
-            </h1>
+                <span className={stat==='OFF'?'text-red-700':'text-green-700'}>{stat}</span>
+            </button>
         </div>
     )
 }
