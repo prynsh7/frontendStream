@@ -20,6 +20,7 @@ import ManageVideos from './Pages/ManageVideos';
 import PlayList from './Pages/PlayList';
 import Video from './Pages/Video';
 import Settings from './Pages/Settings';
+import Addons from './components/User/Home/Addons/Addons';
 
 
 
@@ -50,6 +51,8 @@ function App() {
         <Route path="/playlist" element={<PlayList />} />
         <Route path="/video" element={<Video />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/addons" element={<Addons/>} />
+
 
       </Routes>
 

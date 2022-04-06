@@ -2,7 +2,7 @@
 
 const Sidebar = () => {
     return (
-        <aside className="hidden sm:flex absolute top-0 bottom-0 left-0" aria-label="Sidebar">
+        <aside className="hidden sm:flex absolute top-0 bottom-0 left-0 fixed" aria-label="Sidebar">
             <div className="overflow-y-auto py-4 md:px-1">
                 <div className="flex mb-5">
                     <a href='/home' passHref>
