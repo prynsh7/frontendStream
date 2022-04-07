@@ -6,6 +6,10 @@ import EmbedButton from './Inputs/EmbedButton'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import SideNav from '../SideNav/Index'
+import './Videos.scss'
+import { ImCross } from "react-icons/im";
+import Input from '../Input/Input'
+import Select from '../Input/Select'
 
 const VideosList = () => {
     const router = useNavigate()
@@ -18,7 +22,7 @@ const VideosList = () => {
     const styleValue = nav ? 'none' : 'hidden'
 
     return (
-        <div className='relative'>
+        <div className='relative Videos h-[100vh] '>
             <SideNav stylevalue={styleValue} />
 
             <div className="rounded-t mb-0 px-4 py-3 border-0 relative">
@@ -34,48 +38,73 @@ const VideosList = () => {
                     </div>
                 </div >
 
-                <div className="flex ml-16 sm:ml-0 gap-2 items-center">
-                    <div className="cursor-pointer">
-                        <a href='/manage-videos' passHref>
-                            <h1 className="font-semibold text-lg text-black">Manage Videos</h1>
-                        </a>
-                    </div>
-                    <div className="">
-                        <h3 className="font-bold text-lg text-sky-600">|</h3>
-                    </div>
-                    <div className="cursor-pointer">
-                        <a href='/playlist' passHref>
-                            <h1 className="font-semibold text-lg text-black">Manage Playlist</h1>
-                        </a>
-                    </div>
-                    <div className="">
-                        <h3 className="font-bold text-lg text-sky-600">|</h3>
-                    </div>
-                    <div className="cursor-pointer">
-                        <a href='/playlist' passHref>
-                            <h1 className="font-semibold text-lg text-black">Manage Popups</h1>
-                        </a>
-                    </div>
-                </div>
             </div>
 
-            <section className="relative py-12 bg-blueGray-50">
-                <div className="w-full mb-12 px-4">
-                    <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded">
 
-                        <div className="flex flex-col sm:flex-row justify-between rounded-t mb-0 px-4 py-3 border-0">
-                            <div className="flex flex-col md:flex-row gap-2 items-center">
-                                <div className="flex items-start justify-start w-full">
-                                    <Search />
-                                </div>
-                                <div className="flex flex-row gap-2 w-full">
-                                    <Category />
-                                    {router.pathname === '/playlist' && (<Playlist />)}
-                                </div>
-                            </div>
+            <section className="relative bg-blueGray-50 ">
+                <div className="w-full mb-12 px-4 shadow-lg ">
+                    <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded sm:w-[92%] mr-auto">
 
-                            <div className='flex items-start w-full sm:w-auto sm:items-end sm:px-2 my-4 sm:my-0'>
-                                {router.pathname === '/playlist' && (<EmbedButton />)}
+                        <div className="flex flex-col sm:flex-row justify-between rounded-t mb-0 px-4 py-3 pt-1 border-0">
+                            <div className="grid w-full grid-cols-10 gap-5 items-center">
+                                <div className="col-span-7 flex flex-col justify-start gap-10 mt-0 h-full">
+                                    <div className="flex ml-16 sm:ml-0 gap-2 items-center">
+                                        <div className="cursor-pointer">
+                                            <a href='/manage-videos' passHref>
+                                                <h1 className="font-semibold text-lg text-black">Manage Videos</h1>
+                                            </a>
+                                        </div>
+                                        <div className="">
+                                            <h3 className="font-bold text-lg text-sky-600">|</h3>
+                                        </div>
+                                        <div className="cursor-pointer">
+                                            <a href='/playlist' passHref>
+                                                <h1 className="font-semibold text-lg text-black">Manage Playlist</h1>
+                                            </a>
+                                        </div>
+                                        <div className="">
+                                            <h3 className="font-bold text-lg text-sky-600">|</h3>
+                                        </div>
+                                        <div className="cursor-pointer">
+                                            <a href='/playlist' passHref>
+                                                <h1 className="font-semibold text-lg text-black">Manage Popups</h1>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-row gap-2">
+                                        <div className="flex items-start justify-start w-full searchInput">
+                                            <Search />
+                                        </div>
+                                        <div className="flex flex-row w-full catHeight">
+                                            <Category />
+                                        </div>
+                                        <div className="flex flex-row w-full catHeight">
+                                            <Category />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div className="col-span-3 grid grid-cols-6 px-5 pr-0">
+                                    <div className="col-span-5 borderDot">
+                                        <Input placeholder="Embed This Playlist"/>
+                                    </div>
+                                    <div className="col-span-1 flex justify-center items-center">
+                                        <div className='border p-3'>
+                                        <ImCross/>
+                                        </div>
+                                    </div>
+                                    <div className="col-span-6 selectHeight">
+                                        <Select name="Player Name" />
+                                    </div>
+                                    <div className="col-span-6 selectHeight">
+                                        <Select name="Playlist Name"/>
+                                    </div>
+                                    <div className="col-span-4">
+                                    <button className='w-full px-6 py-2 text-white bg-[#1E1E1F] font-[600] rounded mt-1'>Copy Embeded Code</button>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
 
@@ -94,8 +123,8 @@ const VideosList = () => {
                                 </thead>
 
                                 <tbody>
-                                    <TableData id={1} thumbnail={'/space.png'} title={'Killer player sales Video'} date={'Feb 17, 2021'} views={231} avgViewDuration={'0:11 (67.2%)'} avgPercentViewed={'0:20 (87.3%)'} />
-                                    <TableData id={8} thumbnail={'/space.png'} title={'Killer player sales Video'} date={'Feb 17, 2021'} views={231} avgViewDuration={'0:11 (67.2%)'} avgPercentViewed={'0:20 (87.3%)'} />
+                                    <TableData id={1} thumbnail={'/Assets/space.png'} title={'Killer player sales Video'} date={'Feb 17, 2021'} views={231} avgViewDuration={'0:11 (67.2%)'} avgPercentViewed={'0:20 (87.3%)'} />
+                                    <TableData id={8} thumbnail={'/Assets/space.png'} title={'Killer player sales Video'} date={'Feb 17, 2021'} views={231} avgViewDuration={'0:11 (67.2%)'} avgPercentViewed={'0:20 (87.3%)'} />
 
                                 </tbody>
                             </table>

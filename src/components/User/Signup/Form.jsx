@@ -11,7 +11,7 @@ const Form = () => {
     }
 
     return (
-        <div className="md:mt-[32px] lg:mt-[52px] form-auth">
+        <div className=" form-auth">
             <div className="text-center">
                 <h1 className="text-white mx-8 leading-[62px] text-[50px] font-bold md:font-extrabold font-['Rota']">Register Your Account</h1>
                 <p className="text-[#999A9C] mx-8 my-3 leading-7 font-normal font-['Rota'] f-a-p">Choose from 130,000 online video courses with new additions published every second month</p>

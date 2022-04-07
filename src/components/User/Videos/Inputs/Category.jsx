@@ -6,7 +6,7 @@ const Category = () => {
     const [isList, setIsList] = useState(false);
 
     return (
-        <div>
+        <div className="Category">
             <div onClick={() => setIsList(!isList)} className="w-auto p-4 shadow rounded bg-[#F4F7F9] text-sm font-medium leading-none text-[#787C87] flex items-center justify-between cursor-pointer">
                 Select Category
                 {isList ? (
