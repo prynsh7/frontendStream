@@ -37,7 +37,7 @@ const Settings = () => {
 
     return (
         <div className='mx-2 sm:mx-0 relative Settings'>
-            <SideNav stylevalue={styleValue} />
+        
             {/* Nav */}
             <div className='flex flex-row items-center gap-1 float-left absolute top-2 left-0 sm:hidden'>
                 <div onClick={showSideNav} className='flex sm:hidden'>
@@ -56,7 +56,7 @@ const Settings = () => {
                 <button className='mr-[40px] px-8 bg-[#E1FFF2] w-full sm:w-auto text-center rounded py-2 text-[#31B37D] text-[900] mr-2'>SAVE</button>
             </div>
 
-            <div className='flex flex-col lg:grid lg:grid-cols-3 mr-4 border-2'>
+            <div className='flex flex-col lg:grid lg:grid-cols-3 mr-4 border-2 border-l-0'>
                 {/* //Left */}
                 <div className='col-span-1 gap-2 border-l-[1px] border-black'>
                     {/* Enabled resolutions */}
