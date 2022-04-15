@@ -12,8 +12,9 @@ const Input = (props) => {
                 value={props.value}
             />
             {props.placeholder === 'Email' && <BsCircle size={20} className="absolute top-6 right-2 text-white" />}
-            {props.placeholder === '8 Digit Pin' && <BsEyeSlash size={20} className="absolute top-6 right-2 text-white" />}
-            {props.placeholder === '8 digit Pin' && <BsEye size={20} className="absolute top-6 right-2 text-white" />}
+            {props.placeholder === 'Username' && <BsCircle size={20} className="absolute top-6 right-2 text-white" />}
+            {props.placeholder === 'Create password' && <BsEyeSlash size={20} className="absolute top-6 right-2 text-white" />}
+            {props.placeholder === 'a' && <BsEye size={20} className="absolute top-6 right-2 text-white" />}
         </div>
     )
 }

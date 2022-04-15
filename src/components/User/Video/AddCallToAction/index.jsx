@@ -16,11 +16,11 @@ const AddCallToAction = () => {
                         <AiOutlineMinus size={25} />
                     </div>
                 ) : (
-                    <div>
-                        <FiPlus size={25} />
+                    <div className="pb-1">
+                        <FiPlus size={10} />
                     </div>
                 )}
-                Add Call-to-Action
+                &nbsp;&nbsp;Add Call-to-Action
             </div>
             {isList && (
                 <div className="w-full mt-2 bg-white">

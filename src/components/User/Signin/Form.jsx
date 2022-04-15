@@ -1,14 +1,39 @@
-import React from "react"
+import React, {useState} from "react"
 import Input from "./Input"
 import { BsArrowRight, BsApple, BsGoogle } from 'react-icons/bs'
 import { FaFacebookF } from 'react-icons/fa'
+import cogoToast from "cogo-toast";
+import axios from "axios";
+
+
 
 
 const Form = () => {
+    const [email,setEmail] = useState();
+const [password,setPassword] = useState();
 
-    const handleChange = (e) => {
-        //...
+const handleSubmit = (e)=>{
+    e.preventDefault();
+    if(!email){
+        cogoToast.error("Email is required");
+        return;
     }
+
+    if(!password){
+        cogoToast.error("Email is required");
+        return;
+    }
+    const data={
+        email:email,
+        password:password
+    }
+
+    axios.post('./signin',data)
+    .then((res)=>{
+        console.log(res.data);
+    })
+    .catch(err=>{console.log(err)})
+}
 
     return (
         <div className=" form-auth">
@@ -19,9 +44,9 @@ const Form = () => {
             <div className="flex flex-col-reverse md:flex md:flex-row justify-between my-8 f-a-div">
                 <div className="mx-6 sm:mx-8 md:mx-2 md:w-full">
                     <form action="" className="md:mr-6 md:ml-32 lg:mr-12 lg:ml-48">
-                        <Input name={"username"} placeholder={"Username"} type={"text"} onChange={handleChange} id={"user-name"} value={""} />
-                        <Input name={"pin"} placeholder={"8 Digit Pin"} type={"password"} onChange={handleChange} id={"pass-word"} value={""} />
-                        <button className="w-full rounded-md text-white my-2 bg-gradient-to-r from-[#9A3EBF] via-[#C53660, #E93141] to-[#F98B51] py-3 px-4 signin-btn"><a href='/home'>Get Started</a><BsArrowRight size={20} className="float-right mt-1" /></button>
+                        <Input name={"Email"} placeholder={"email"} type={"text"} onChange={(e)=>setEmail(e.target.value)} id={"user-name"}/>
+                        <Input name={"pin"} placeholder={"password"} type={"password"} onChange={(e)=>setPassword(e.target.value)} id={"pass-word"}/>
+                        <button className="w-full rounded-md text-white my-2 bg-gradient-to-r from-[#9A3EBF] via-[#C53660, #E93141] to-[#F98B51] py-3 px-4 signin-btn" onClick={(e)=>handleSubmit(e)}>Get Started<BsArrowRight size={20} className="float-right mt-1" /></button>
                     </form>
                 </div>
                 <div className="flex justify-center items-center m-4">
