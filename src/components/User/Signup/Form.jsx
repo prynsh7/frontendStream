@@ -20,7 +20,7 @@ const Form = () => {
                 <div className="mx-6 sm:mx-8 md:mx-2 md:w-full">
                     <form action="" className="md:mr-6 md:ml-32 lg:mr-12 lg:ml-48">
                         <Input name={"username"} placeholder={"Username"} type={"text"} onChange={handleChange} id={"user-name"} value={""} />
-                        <Input name={"pin"} placeholder={"8 Digit Pin"} type={"password"} onChange={handleChange} id={"pass-word"} value={""} />
+                        <Input name={"pin"} placeholder={"8 Digit Pin"} type={"password"} onChange={handleChange} id={"pass-word"} value={""}/>
                         <button className="w-full rounded-md text-white my-2 bg-gradient-to-r from-[#9A3EBF] via-[#C53660, #E93141] to-[#F98B51] py-3 px-4 signin-btn"><a href='/home'>Get Started</a><BsArrowRight size={20} className="float-right mt-1" /></button>
                     </form>
                 </div>

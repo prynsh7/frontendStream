@@ -30,13 +30,6 @@ import Checkout from './Pages/Checkout';
 import Addons from './components/User/Home/Addons/Addons';
 
 
-
-
-
-
-
-
-
 function App() {
   return (
 
@@ -49,7 +42,6 @@ function App() {
         <Route path="/notifications" element={<Notification />} />
         <Route path="/signup" element={<Auth />} />
         <Route path="/signin" element={<Signin />} />
-
         <Route path="/" element={<Home />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/statistics" element={<Statistics />} />
