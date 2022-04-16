@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
+import { useNavigate } from 'react-router'
 
 const Navigation = () => {
     const [show, setShow] = useState(false)
     function toggle(){
         setShow(!show)
     }
+
+    const navigate = useNavigate();
+
     return (
         <nav className="bg-[#161616] border-gray-200 px-2 sm:px-4 py-2.5 rounded lg:px-[40px] md:pt-12">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -17,7 +21,7 @@ const Navigation = () => {
                 </div>
                 <div className="flex justify-between gap-4 md:gap-8 items-center md:order-2">
                     <FiSearch size={25} className="md:mt-2 text-white cursor-pointer" />
-                    <button className="text-white font-medium bg-gradient-to-r from-[#9A3EBF] via-[#C53660, #E93141] to-[#F98B51] rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 med-font">Sign Up</button>
+                    <button className="text-white font-medium bg-gradient-to-r from-[#9A3EBF] via-[#C53660, #E93141] to-[#F98B51] rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 med-font"  onClick={() => navigate("/signup")}>Sign Up</button>
                 </div>
                 <div className={`${show ? 'hidden' : 'none'} justify-between items-center w-full md:flex md:w-auto md:order-1`} id="mobile-menu">
                     <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-mid md:font-medium items-center">

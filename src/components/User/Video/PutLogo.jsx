@@ -6,7 +6,7 @@ const PutLogo = () => {
     const [isList, setIsList] = useState(false)
 
     return (
-        <div className="my-2 w-[45%]">
+        <div className="my-2 w-[45%] putLogo">
             <div onClick={() => setIsList(!isList)} className="p-4 shadow rounded-md bg-[#F5F8FA] text-sm font-medium leading-none text-gray-800 flex items-center justify-between cursor-pointer">
                 Put this logo
                 {isList ? (

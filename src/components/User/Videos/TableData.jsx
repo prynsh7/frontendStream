@@ -13,19 +13,21 @@ const TableData = (props) => {
     return (
         <tr className='border-b-[1px]'>
             <td><div className='flex justify-center text-black'><BsRecordCircle size={30} /></div></td>
-            <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+            <th className="border-t-0  align-left border-l-0 border-r-0 text-xs whitespace-nowrap py-4 text-left flex items-center justify-start">
+                <div className='flex items-center h-[100%]'>
                 <h1 className='pr-4 text-black'>1</h1>
                 <img src={props.thumbnail} height='55px' width='91px' className=" bg-white rounded-md border" alt="..." />
-                <div className='grid'>
-                    <span className="ml-3 font-bold text-[#1E1E1F]">{props.title}</span>
-                    <span className="ml-3 font-bold text-[#1E1E1F]">{props.date}</span>
+                <div className='grid mr-auto'>
+                    <span className="ml-3 font-bold text-[#1E1E1F] text-sm">{props.title}</span>
+                    <span className="ml-3 font-bold text-[#1E1E1F] text-sm">{props.date}</span>
+                </div>
                 </div>
             </th>
-            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs whitespace-nowrap p-4">{props.views}</td>
-            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs whitespace-nowrap p-4">
+            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs whitespace-nowrap p-4 text-center">{props.views}</td>
+            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs whitespace-nowrap p-4 text-center">
                 {props.avgViewDuration}
             </td>
-            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs whitespace-nowrap p-4">
+            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[#1E1E1F] text-xs whitespace-nowrap p-4 text-center">
                 {props.avgPercentViewed}
             </td>
             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"><div className="flex items-center">
@@ -39,7 +41,7 @@ const TableData = (props) => {
                 </div>
             </div>
             </td>
-            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right flex justify-end">
                 <Toggle />
             </td>
         </tr>

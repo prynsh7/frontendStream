@@ -15,3 +15,14 @@
 .br5{
     border-radius: 5px;
 }
+.loader {
+    height: 100vh;
+    top: 0;
+    width: 100vw;
+    position: absolute;
+    background: white;
+    opacity: 0.5;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+  }

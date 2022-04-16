@@ -1,17 +1,74 @@
-import React from "react"
+import React, { useState } from "react"
 import Input from "./Input"
 import { BsArrowRight, BsApple, BsGoogle } from 'react-icons/bs'
 import { FaFacebookF } from 'react-icons/fa'
+import cogoToast from "cogo-toast";
+import axios from "axios";
+import Loader from "../Loader/Loader";
+import { useNavigate, Navigate } from "react-router";
+import { LOGIN_USER } from "../../../Utils/apiConstant";
+
+
+
 
 
 const Form = () => {
+    
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
-    const handleChange = (e) => {
-        //...
+    const [loading, setLoading] = useState(false);
+
+    const navigate = useNavigate();
+    const strAuth = localStorage.getItem("strAuth");
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!email) {
+            cogoToast.error("Email is required");
+            return;
+        }
+
+        if (!password) {
+            cogoToast.error("password is required");
+            return;
+        }
+
+        setLoading(true)
+
+        const data = {
+            email: email,
+            password: password
+        }
+
+        await axios.post(LOGIN_USER, data)
+            .then((res) => {
+                console.log(res.data);
+                cogoToast.success("User logged in successfully");
+                setLoading(false);
+                localStorage.setItem("strAuth", res.data.token)
+                
+                if(res.data.data.isAdmin){
+                    navigate("/dashboard")
+                }else{
+                    navigate("/")
+                }
+
+            })
+            .catch(err => {
+                
+                setLoading(false)
+                cogoToast.error(err.response.data.message)
+            
+            })
+
     }
 
     return (
         <div className=" form-auth">
+            {strAuth ? <Navigate replace to="/" /> : null}
+            <Loader loading={loading} />
             <div className="text-center">
                 <h1 className="text-white mx-8 leading-[62px] text-[50px] font-bold md:font-extrabold font-['Rota']">Login Your Account</h1>
                 <p className="text-[#999A9C] mx-8 my-3 leading-7 font-normal font-['Rota'] f-a-p">Choose from 130,000 online video courses with new additions published every second month</p>
@@ -19,9 +76,9 @@ const Form = () => {
             <div className="flex flex-col-reverse md:flex md:flex-row justify-between my-8 f-a-div">
                 <div className="mx-6 sm:mx-8 md:mx-2 md:w-full">
                     <form action="" className="md:mr-6 md:ml-32 lg:mr-12 lg:ml-48">
-                        <Input name={"username"} placeholder={"Username"} type={"text"} onChange={handleChange} id={"user-name"} value={""} />
-                        <Input name={"pin"} placeholder={"8 Digit Pin"} type={"password"} onChange={handleChange} id={"pass-word"} value={""} />
-                        <button className="w-full rounded-md text-white my-2 bg-gradient-to-r from-[#9A3EBF] via-[#C53660, #E93141] to-[#F98B51] py-3 px-4 signin-btn"><a href='/home'>Get Started</a><BsArrowRight size={20} className="float-right mt-1" /></button>
+                        <Input name={"Email"} placeholder={"email"} type={"text"} onChange={(e) => setEmail(e.target.value)} id={"user-name"} />
+                        <Input name={"pin"} placeholder={"password"} type={"password"} onChange={(e) => setPassword(e.target.value)} id={"pass-word"} />
+                        <button className="w-full rounded-md text-white my-2 bg-gradient-to-r from-[#9A3EBF] via-[#C53660, #E93141] to-[#F98B51] py-3 px-4 signin-btn" onClick={(e) => handleSubmit(e)}>Get Started<BsArrowRight size={20} className="float-right mt-1" /></button>
                     </form>
                 </div>
                 <div className="flex justify-center items-center m-4">

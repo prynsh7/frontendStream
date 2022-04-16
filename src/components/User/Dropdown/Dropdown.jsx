@@ -6,8 +6,8 @@ const Dropdown = (props) => {
     const [isList, setIsList] = useState(false);
 
     return (
-        <div>
-            <div onClick={() => setIsList(!isList)} className="w-auto mb-2 p-3 rounded bg-[#F7FAFC] border-0 text-sm font-medium leading-none text-gray-800 flex items-center justify-between cursor-pointer" >
+        <div className="Dropdown">
+            <div onClick={() => setIsList(!isList)} className="w-auto h-[100%] p-3 rounded bg-[#F7FAFC] border-0 text-sm font-medium leading-none text-gray-800 flex items-center justify-between cursor-pointer" >
                 {props.name}
                 {isList ? (
                     <div>

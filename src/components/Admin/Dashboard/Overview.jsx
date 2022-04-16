@@ -76,7 +76,7 @@ const Overview = () => {
                 </div>
             </div>
             {/* Section 2 */}
-            <div className='col-span-1 bg-[#F2F5FA] rounded-xl mx-4'>
+            <div className='col-span-1 bg-[#F2F5FA] rounded-xl mx-4 h-[80%]'>
                 <DeviceChart />
             </div>
         </div>

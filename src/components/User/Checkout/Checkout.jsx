@@ -1,6 +1,7 @@
 import { BsArrowRightShort } from 'react-icons/bs'
 import { SiAmericanexpress } from 'react-icons/si'
 import { FaCcVisa, FaCcPaypal, FaCcMastercard } from 'react-icons/fa'
+import './Checkout.scss'
 
 
 const index = () => {
@@ -8,23 +9,21 @@ const index = () => {
         <div className="mx-auto">
 
             <div className="bg-[#462291] h-16 flex justify-center items-center">
-                <h1 className="text-white">Lets Checkout | </h1>
+                <h1 className="text-white">Lets Checkout | </h1><span className='rounded-full h-9 w-9 flex flex-col'><span className='w-full bg-[#CC172C]'></span><span className='w-full bg-[#FFFFFF]'></span></span>
             </div>
             <div className="bg-white h-16 flex justify-center items-center">
                 <h1 className="text-[#1E1E1F] font-bold leading-10">Order Summary</h1>
             </div>
             {/* checkout form */}
-            <div className='mx-4 sm:mx-32 lg:mx-[250px]'>
-                <div className='flex flex-col lg:flex-row justify-between mt-4'>
-                    <div className='flex justify-center'>
+            <div className='mx-4 sm:mx-32 lg:mx-[280px]'>
+                <div className='grid grid-cols-2 mt-4'>
+                    <div className='col-span-1 flex justify-start'>
                         <img
                             src='./Assets/gold-plan.png'
                             alt='gold plan'
-                            className='object-fill'
-                            height='120px'
-                            width='120px' />
+                            className='object-fill h-[120px] w-[120px] sm:h-[190px] w-[190px]' />
                     </div>
-                    <div>
+                    <div className='col-span-1 my-auto'>
                         <div className='border-[#462291] border-2 px-2 py-2 flex items-center rounded-sm justify-between'>
                             <div className='flex items-center'>
                                 <input type="radio" className='outline-2 h-5 w-5 text-[#787C87]' placeholder='Enter coupon code' />
@@ -36,7 +35,7 @@ const index = () => {
                             <input type="text" className='outline-0 text-[#787C87]' placeholder='Enter coupon code' />
                             <button className='bg-[#462291] rounded-full px-3 py-1 text-white text-sm'>APPLY</button>
                         </div>
-                        <h1>You have a 7-day free trial ending on 20 Jan 2022</h1>
+                        <h1 className='trext-base'>You have a 7-day free trial ending on 20 Jan 2022</h1>
                     </div>
                 </div>
 
@@ -50,22 +49,22 @@ const index = () => {
                     </div>
                     <div className='flex flex-col lg:flex-row gap-2 mt-4'>
 
-                        <div className='border-[#462291] border-2 flex gap-4 p-3'>
-                            <input type="radio" className='outline-2 h-6 w-6 text-[#787C87]' />
+                        <div className='border-[#462291] border-2 flex gap-4 p-3 py-6 rounded-lg'>
+                            <input type="radio" name='payMethod' className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>Credit Card</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                         </div>
-                        <div className='border-[#C5C7CD] border-2 flex gap-4 p-3'>
-                            <input type="radio" className='outline-2 h-6 w-6 text-[#787C87]' />
+                        <div className='border-[#C5C7CD] border-2 flex gap-4 p-3 py-6 rounded-lg'>
+                            <input type="radio" name='payMethod' className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>PayPal</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                         </div>
-                        <div className='border-[#C5C7CD] border-2 flex gap-4 p-3'>
-                            <input type="radio" className='outline-2 h-6 w-6 text-[#787C87]' />
+                        <div className='border-[#C5C7CD] border-2 flex gap-4 p-3 py-6 rounded-lg'>
+                            <input type="radio" name='payMethod' className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>Checkout</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -75,22 +74,24 @@ const index = () => {
                     </div>
                     <div className='my-8'>
 
-                        <div className='grid grid-cols-3 gap-4 mb-6'>
-                            <div className='col-span-3 lg:col-span-2'>
+                        <div className='grid grid-cols-3 gap-8 mb-6'>
+                            <div className='col-span-2 lg:col-span-2'>
                                 <h1 className='text-[#787C87] text-sm'>CARD NUMBER</h1>
                                 <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='.... .... .... ....' />
                             </div>
-                            <div className='col-span-3 lg:col-span-2'>
-                                <h1 className='text-[#787C87] text-sm'>NAME ON CARD</h1>
-                                <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='' />
-                            </div>
-                        </div>
-
-                        <div className='grid grid-cols-3 gap-4'>
-                            <div className='col-span-2'>
+                            <div className='col-span-1'>
                                 <h1 className='text-[#787C87] text-sm'>EXPIRY DATE</h1>
                                 <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='MM/YY' />
                             </div>
+                            
+                        </div>
+
+                        <div className='grid grid-cols-3 gap-8'>
+                        <div className='col-span-2 lg:col-span-2'>
+                                <h1 className='text-[#787C87] text-sm'>NAME ON CARD</h1>
+                                <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='' />
+                            </div>
+                            
                             <div className='col-span-1'>
                                 <h1 className='text-[#787C87] text-sm'>CODE</h1>
                                 <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='...' />
@@ -98,11 +99,11 @@ const index = () => {
                         </div>
 
                     </div>
-                    <div className='bg-[#462291] h-16 flex justify-between items-center p-4'>
+                    <div className='bg-[#462291] h-13 flex justify-between items-center p-4 rounded-lg'>
                         <h1 className='text-white'>GRAND TOTAL</h1>
                         <h1 className='text-white'>$110</h1>
                     </div>
-                    <div className='flex justify-center my-12'>
+                    <div className='flex justify-center my-12 h-12'>
                         <button className='bg-[#462291] text-white rounded-full px-12 py-2 flex items-center'>Confirm & pay <BsArrowRightShort size={15} className='float-right' /></button>
                     </div>
                 </form>

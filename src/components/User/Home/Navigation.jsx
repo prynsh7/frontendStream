@@ -72,7 +72,7 @@ const Navigation = () => {
                         </div>
                         <div className="flex items-center px-1 sm:px-2 justify-end">
                             <h1 className='mb-1 mr-1 whitespace-nowrap font-bold hidden sm:flex'>Shekh Al Raihan</h1>
-                            <div className="flex justify-center items-center">
+                            <div className="flex justify-center items-center" onClick={() => {localStorage.clear(); window.location.reload(false)}}>
                                 <img alt="profil" src="./Assets/Ellipse-2.png" className="object-contain rounded-full" height='46px' width='46px' />
                             </div>
                         </div>
