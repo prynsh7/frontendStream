@@ -7,11 +7,11 @@ const Addon = (props) => {
                 <form className="flex-auto gap-1 p-6">
                     <div className="">
                         <h1 className="flex-auto text-xl">
-                            <props.title />
+                            {props.title}
                         </h1>
 
                         <p className="w-full flex-none text-sm font-medium text-gray-500 mt-2">
-                            Some text
+                            {props.description}
                         </p>
                     </div>
 
@@ -25,7 +25,7 @@ const Addon = (props) => {
                     </div>
 
                 </form>
-                <div className="relative w-32 h-auto md:w-48">
+                <div className="relative w-32 h-[100%] ">
                     <img src={props.imgpath} alt="image" className="absolute flex-1 object-contain" layout='fill' />
                 </div>
             </div>
