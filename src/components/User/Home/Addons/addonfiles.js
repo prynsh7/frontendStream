@@ -1,5 +1,6 @@
 import * as textTitles from './Titles'
 
+
 export const premiumAddons = [{
     title: textTitles.Title1,
     imgpath: './Assets/water-can.png',

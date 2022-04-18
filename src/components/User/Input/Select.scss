@@ -1,0 +1,16 @@
+.customSelect{
+    input{
+        background: #F4F7F9;
+        color: #787C87;
+        &::placeholder{
+            color: #787C87;
+        }
+    }
+    select{
+        background: #F4F7F9;
+        color: #787C87;
+        &::placeholder{
+            color: #787C87;
+        }
+    }
+}

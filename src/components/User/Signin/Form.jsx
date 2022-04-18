@@ -48,7 +48,9 @@ const Form = () => {
                 cogoToast.success("User logged in successfully");
                 setLoading(false);
                 localStorage.setItem("strAuth", res.data.token)
-                
+                localStorage.setItem('libid', res.data.data.libid)
+                localStorage.setItem('apikey', res.data.data.apikey)
+                localStorage.setItem('cdn', res.data.data.cdn)
                 if(res.data.data.isAdmin){
                     navigate("/dashboard")
                 }else{

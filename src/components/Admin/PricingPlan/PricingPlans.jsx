@@ -10,6 +10,7 @@ function PricingPlans() {
 
     const [show, setShow] = useState(false)
     const [id, setId] = useState('')
+    const [trigger, setTrigger] = useState(false)
 
     const showAddonForm = (id) => {
         setShow(!show)
@@ -35,8 +36,8 @@ function PricingPlans() {
                     <PaymentGateway />
                 </div>
                 <div className='basis-1/2 w-[60%]'>
-                    <ActivePlans showAddonForm={showAddonForm} showPlanForm={showPlanForm} />
-                    {id === 'addon' && <AddAddon />}
+                    <ActivePlans showAddonForm={showAddonForm} showPlanForm={showPlanForm} trigger={trigger} setTrigger={setTrigger} />
+                    {id === 'addon' && <AddAddon  setTrigger={setTrigger}/>}
                     {id === 'plan' && <AddPlan />}
                 </div>
             </div>

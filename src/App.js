@@ -1,7 +1,6 @@
 import Sidebar from './components/Admin/Dashboard/Sidebar';
 import './App.css';
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -25,9 +24,9 @@ import Websites from './Pages/Websites';
 import Player from './Pages/Player';
 import CallToActions from './Pages/CallToActions';
 import Checkout from './Pages/Checkout';
+import Addons from './Pages/AddonsMain';
 
 
-import Addons from './components/User/Home/Addons/Addons';
 
 
 function App() {
