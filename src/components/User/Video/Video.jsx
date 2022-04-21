@@ -68,20 +68,20 @@ const Video = () => {
                         <div className="inputMargin">
                             <Input name={""} placeholder={"Enter video title here"} type={"text"} onChange={handleChange} id={""} value={""} />
                         </div>
-                        <div className="flex flex-wrap justify-between sm:flex-nowrap gap-2 my-2">
-                            <div className="flex justify-center items-center w-24 sm:flex-grow flex-col h-[66px] border-[1px] border-dashed">
+                        <div className="grid grid-cols-4 gap-2 my-2">
+                            <div className="col-span-2 sm:col-span-1 flex justify-center items-center w-[120px] h-[66px]  sm:flex-grow flex-col border-[1px] border-dashed">
                                 <p className="text-center">
-                                    <img src="./Assets/thumbnail-vector.png" height='18px' width='18px' alt='thumbnail' />
+                                    <img src="./Assets/thumbnail-vector.png" height='18px' width='18px' alt='thumbnail'/>
                                 </p>
                                 <p className="text-xs text-center">Upload thumbnail</p>
                             </div>
-                            <div className="flex sm:flex-grow w-[120px] h-[66px] relative">
+                            <div className="col-span-2 sm:col-span-1 flex sm:flex-grow w-[120px] h-[66px] relative">
                                 <img src='./Assets/space.png' className="absolute object-fill" alt="space" layout="fill" />
                             </div>
-                            <div className="flex sm:flex-grow w-[120px] h-[66px] relative">
+                            <div className="col-span-2 sm:col-span-1 flex sm:flex-grow w-[120px] h-[66px] relative">
                                 <img src='./Assets/1-rocket.png' className="absolute object-fill" alt="rocket" layout="fill" />
                             </div>
-                            <div className="flex justify-center items-center w-24 sm:flex-grow h-[66px] border-[1px] border-dashed flex-col">
+                            <div className="col-span-2 sm:col-span-1 flex justify-center items-center w-[120px] h-[66px]  sm:flex-grow  border-[1px] border-dashed flex-col">
                                 <p className="text-center">
                                     <img className="items-center" src="./Assets/thumbnail-vector.png" height='18px' width='18px' alt='thumbnail' />
                                 </p>
