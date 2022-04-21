@@ -7,7 +7,7 @@ import "./Auth.scss"
 
 const Auth = () => {
     return (
-        <div className='bg-[#161616] relative overflow-hidden auth'>
+        <div className='bg-[#161616] relative overflow-x-hidden auth'>
             <Navigation />
             <Form />
             {/* <Footer /> */}

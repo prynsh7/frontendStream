@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
 import Addon from './Addon'
 import { premiumAddons } from './addonfiles'
@@ -37,12 +37,12 @@ const PremiumAddons = () => {
                 obj.trialtext = '(7 Day free trial available)'
                 obj.btncolor = 'bg-[#21ABF9]'
                 obj.bgcolor = 'bg-[#EFF9FF]'
-            }else{
+            } else {
                 obj.title = i.name
                 obj.description = i.description
-                obj.imgpath= './Assets/hand-icon.png'
+                obj.imgpath = './Assets/hand-icon.png'
                 obj.btntext = `$ ${i.price}`
-                obj.trialtext= ''
+                obj.trialtext = ''
                 obj.btncolor = 'bg-[#30D38B]'
                 obj.bgcolor = 'bg-[#E5FFF4]'
             }
@@ -64,7 +64,8 @@ const PremiumAddons = () => {
         <div className='flex justify-center flex-col items-center bg-[#FBF9F6]'>
             <h1 className='text-center text-2xl leading-9 font-[700] text-[#1E1E1F]'>Premium Addons</h1>
             <h1 className='text-center text-xl font-[600] leading-6 text-[#1E1E1F]'>Get powerful addons to boost experience</h1>
-            <div className='grid lg:grid-cols-2 gap-4 mx-2 md:mx-6 my-6'>
+
+            <div className='grid lg:grid-cols-2 grid-cols-1 gap-4 mx-2 md:mx-6 my-6'>
                 {addon && addon.map((element, index) => (
                     <Addon
                         key={index}
@@ -78,6 +79,7 @@ const PremiumAddons = () => {
                     />
                 ))}
             </div>
+
             <div className='flex justify-center mb-16'>
                 <a href='/addons' passHref>
                     <button className='flex bg-[#EFF2F5] items-center font-bold py-2 px-4 text-[#1E1E1F] rounded'>More<FiArrowUpRight /></button>

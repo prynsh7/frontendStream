@@ -39,11 +39,11 @@ const Settings = () => {
         <div className='mx-2 sm:mx-0 relative Settings'>
 
             {/* Nav */}
-            <div className='flex flex-row items-center gap-1 float-left absolute top-2 left-0 sm:hidden'>
+            <div className='flex flex-row items-center gap-1 float-left absolute left-0 sm:hidden'>
                 <div onClick={showSideNav} className='flex sm:hidden'>
                     <img src='./Assets/home-bar.png' alt='bars' height='16px' width='21px' />
                 </div>
-                <div className='flex sm:hidden'>
+                <div className='flex sm:hidden ml-1'>
                     <a href='/home' passHref>
                         <img src='./Assets/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
                     </a>
@@ -53,7 +53,7 @@ const Settings = () => {
             {/* Header settings page */}
             <div className='flex flex-col sm:flex-row gap-4 justify-center items-center my-8 mr-4'>
                 <h1 className='flex justify-center text-2xl leading-9 m-auto text-[#1E1E1F] font-[700]'>Account Settings</h1>
-                <button className='mr-[40px] px-8 bg-[#E1FFF2] w-full sm:w-auto text-center rounded py-2 text-[#31B37D] text-[900] mr-2'>SAVE</button>
+                <button className='sm:mr-[90px] sm:mt-1 mt-4 m-auto px-8 bg-[#E1FFF2] w-[100%] sm:w-auto text-center rounded py-2 text-[#31B37D] text-[900]'>SAVE</button>
             </div>
 
             <div className='flex flex-col grid grid-cols-3 mr-4 border-2 border-l-0'>

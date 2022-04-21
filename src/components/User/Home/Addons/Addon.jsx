@@ -2,7 +2,7 @@
 const Addon = (props) => {
 
     return (
-        <div className='bg-white'>
+        <div className='bg-white col-span-1 w-[100%]'>
             <div className={`flex ${props.bgcolor} m-4 rounded-lg shadow`}>
                 <form className="flex-auto gap-1 p-6">
                     <div className="">
