@@ -1,5 +1,6 @@
 
 import Select from 'react-select'
+import './Select.scss'
 
 
 const Select_D = ({options, placeholder, setSelected}) => {
@@ -9,7 +10,7 @@ const Select_D = ({options, placeholder, setSelected}) => {
       }
 
     return (
-        <div className='my-2 w-[100%]'>
+        <div className=' customSelect my-2 w-[100%] bg-[#F4F7F9] text-[#787C87] placeholder-[#787C87]'>
         <Select 
         options={options}
         placeholder={placeholder}

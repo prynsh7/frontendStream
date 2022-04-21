@@ -6,22 +6,26 @@ import './Checkout.scss'
 
 const index = () => {
     return (
-        <div className="mx-auto">
+        <div className="mx-auto w-full">
 
             <div className="bg-[#462291] h-16 flex justify-center items-center">
-                <h1 className="text-white">Lets Checkout | </h1><span className='rounded-full h-9 w-9 flex flex-col'><span className='w-full bg-[#CC172C]'></span><span className='w-full bg-[#FFFFFF]'></span></span>
+                <h1 className="text-white text-xl">Lets Checkout &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; </h1>
+                <span className='rounded-full overflow-hidden h-6 w-6 flex flex-col mb-1'>
+                    <span className='w-full h-full bg-[#CC172C]'></span>
+                    <span className='w-full h-full bg-[#FFFFFF]'></span>
+                </span>
             </div>
             <div className="bg-white h-16 flex justify-center items-center">
                 <h1 className="text-[#1E1E1F] font-bold leading-10">Order Summary</h1>
             </div>
             {/* checkout form */}
-            <div className='mx-4 sm:mx-32 lg:mx-[280px]'>
-                <div className='grid grid-cols-2 mt-4'>
+            <div className='mx-4 sm:mx-12 lg:mx-[280px]'>
+                <div className='grid sm:grid-cols-2 grid-cols-1 mt-4'>
                     <div className='col-span-1 flex justify-start'>
                         <img
                             src='./Assets/gold-plan.png'
                             alt='gold plan'
-                            className='object-fill h-[120px] w-[120px] sm:h-[190px] w-[190px]' />
+                            className='object-fill h-[120px] w-[120px] sm:h-[190px] sm:w-[190px]  mx-auto sm:m-0 mb-2' />
                     </div>
                     <div className='col-span-1 my-auto'>
                         <div className='border-[#462291] border-2 px-2 py-2 flex items-center rounded-sm justify-between'>
@@ -32,13 +36,14 @@ const index = () => {
                             <h1 className='text-[#462291] rounded-full px-3 py-1 text-bold'>$110.00</h1>
                         </div>
                         <div className='border-[#462291] mt-2 border-2 px-2 py-2 flex rounded-sm justify-between'>
-                            <input type="text" className='outline-0 text-[#787C87]' placeholder='Enter coupon code' />
+                            <input type="text" className='outline-0 text-[#787C87] w-50% overflow-hidden sm:w-[100%]' placeholder='Enter coupon code' /><span className='sm:hidden'>..</span>&nbsp;&nbsp;
                             <button className='bg-[#462291] rounded-full px-3 py-1 text-white text-sm'>APPLY</button>
                         </div>
-                        <h1 className='trext-base'>You have a 7-day free trial ending on 20 Jan 2022</h1>
+                        <h1 className='text-base text-[#787C87]'>You have a 7-day free trial ending on 20 Jan 2022</h1>
                     </div>
                 </div>
 
+                <br />
                 <form action="">
                     <div className='flex items-center'>
                         <div className="w-6 h-1 bg-[#462291]">
@@ -47,23 +52,23 @@ const index = () => {
                             CHOOSE METHOD
                         </h1>
                     </div>
-                    <div className='flex flex-col lg:flex-row gap-2 mt-4'>
+                    <div className='flex grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4'>
 
-                        <div className='border-[#462291] border-2 flex gap-4 p-3 py-6 rounded-lg'>
+                        <div className='border-[#462291] border-2 col-span-1 flex gap-4 p-3 py-6 rounded-lg'>
                             <input type="radio" name='payMethod' className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>Credit Card</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                         </div>
-                        <div className='border-[#C5C7CD] border-2 flex gap-4 p-3 py-6 rounded-lg'>
+                        <div className='border-[#C5C7CD] border-2 col-span-1 flex gap-4 p-3 py-6 rounded-lg'>
                             <input type="radio" name='payMethod' className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>PayPal</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                         </div>
-                        <div className='border-[#C5C7CD] border-2 flex gap-4 p-3 py-6 rounded-lg'>
+                        <div className='border-[#C5C7CD] border-2 col-span-1 flex gap-4 p-3 py-6 rounded-lg'>
                             <input type="radio" name='payMethod' className='outline-2 h-6 w-6 text-[#787C87]' />
                             <div>
                                 <h1 className='font-bold'>Checkout</h1>
@@ -72,24 +77,24 @@ const index = () => {
                         </div>
 
                     </div>
-                    <div className='my-8'>
+                    <div className='my-8 grid grid-cols-3 gap-2'>
 
-                        <div className='grid grid-cols-3 gap-8 mb-6'>
-                            <div className='col-span-2 lg:col-span-2'>
+                        <div className='col-span-3 sm:col-span-2 grid grid-cols-1 gap-8 '>
+                            <div className='col-span-1'>
                                 <h1 className='text-[#787C87] text-sm'>CARD NUMBER</h1>
                                 <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='.... .... .... ....' />
                             </div>
+
+                            <div className='col-span-1'>
+                                <h1 className='text-[#787C87] text-sm'>NAME ON CARD</h1>
+                                <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='' />
+                            </div>
+                        </div>
+
+                        <div className='col-span-3 sm:col-span-1 grid grid-cols-2 sm:grid-cols-1 gap-8'>
                             <div className='col-span-1'>
                                 <h1 className='text-[#787C87] text-sm'>EXPIRY DATE</h1>
                                 <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='MM/YY' />
-                            </div>
-                            
-                        </div>
-
-                        <div className='grid grid-cols-3 gap-8'>
-                        <div className='col-span-2 lg:col-span-2'>
-                                <h1 className='text-[#787C87] text-sm'>NAME ON CARD</h1>
-                                <input type="text" className='outline-1 h-10 px-2 items-center w-full rounded-md border border-[#C5C7CD]' placeholder='' />
                             </div>
                             
                             <div className='col-span-1'>

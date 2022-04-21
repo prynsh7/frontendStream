@@ -25,7 +25,7 @@ const Player = () => {
         <div className='relative Player'>
             <SideNav stylevalue={styleValue} />
             {/* Nav */}
-            <div className='flex flex-row items-center gap-1 absolute top-1 left-0 sm:hidden ml-2'>
+            <div className='flex flex-row items-center gap-1 absolute -top-2 left-0 sm:hidden ml-2'>
                 <div onClick={showSideNav} className='flex sm:hidden'>
                     <img src='./Assets/home-bar.png' alt='bars' height='16px' width='21px' />
                 </div>
@@ -37,11 +37,11 @@ const Player = () => {
             </div >
 
             {/* Header settings page */}
-            <div className='flex gap-4 justify-center items-center my-8'>
+            <div className='flex sm:gap-4 gap-2 justify-center items-center my-8'>
                 <div className='flex flex-col justify-center'>
                     <h1 className='text-3xl leading-9 m-auto text-[#1E1E1F] font-[800]'>Universal Player</h1>
-                    <div className='w-[60%] mx-auto'>
-                        <p className='text-[#1E1E1F] text-xl sm:text-sm md:text-md mx-8 text-center'>Paste this script in your website’s header
+                    <div className='lg:w-[60%] sm:w-[75%] w-[100%] mx-auto sm:mt-0 mt-3'>
+                        <p className='text-[#1E1E1F] text-sm lg:text-xl sm:text-base mx-8 text-center'>Paste this script in your website’s header
                             to automatically apply our player to videos
                             that are alreday existed on your website you will add in future.</p>
 
@@ -105,10 +105,10 @@ const Player = () => {
                         </div>
                         <div className="gap-2 col-span-11 grid grid-cols-2">
                             <div className="col-span-1">
-                            <PutLogo />
+                                <PutLogo />
                             </div>
                             <div className="col-span-1">
-                            <LogoPosition />
+                                <LogoPosition />
                             </div>
                         </div>
                         <input
@@ -141,7 +141,7 @@ const Player = () => {
                             <p className='flex-grow w-96'>Auto-convert audio files that are ending in MP3, WAV, AIF, AU, M4A</p>
                         </div>
                     </div>
-                    <div className='flex justify-center mt-4 mb-8'>
+                    <div className='lg:flex justify-center mt-4 mb-8 hidden'>
                         <button className='px-6 py-2 w-[280px] h-[40px] rounded-md text-white bg-black whitespace-nowrap'>Generate Script</button>
                     </div>
                 </div>
@@ -159,14 +159,17 @@ const Player = () => {
                                 Script text
                             </p>
                         </div>
-                        <div className='flex justify-end col-end-3 col-span-1'>
-                            <button className='py-2 px-8 text-[#3F48CC] bg-[#EFF6FF] rounded-md font-semibold w-[90%]'>Copy this script</button>
+                        <div className='flex justify-center  sm:col-end-3 sm:col-span-1 col-span-2 '>
+                            <button className='py-2 px-8 text-[#3F48CC] bg-[#EFF6FF] rounded-md font-semibold sm:w-[90%] w-[80%]'>Copy this script</button>
                         </div>
                         <div className="col-span-2 my-4">
                             <h1 className='text-base text-[#3F48CC] font-semibold mb-2'>NOTE FOR DEVELOPER</h1>
                             <div className='text-sm p-6 border-[#3F48CC] border text-justify'>
                                 Established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors.
                             </div>
+                        </div>
+                        <div className='flex justify-center mt-4 mb-8 lg:hidden col-span-2 w-full'>
+                            <button className='px-6 py-2 w-[280px] h-[40px] rounded-md text-white bg-black whitespace-nowrap'>Generate Script</button>
                         </div>
                     </div>
                 </div>

@@ -37,13 +37,13 @@ const Settings = () => {
 
     return (
         <div className='mx-2 sm:mx-0 relative Settings'>
-        
+
             {/* Nav */}
-            <div className='flex flex-row items-center gap-1 float-left absolute top-2 left-0 sm:hidden'>
+            <div className='flex flex-row items-center gap-1 float-left absolute left-0 sm:hidden'>
                 <div onClick={showSideNav} className='flex sm:hidden'>
                     <img src='./Assets/home-bar.png' alt='bars' height='16px' width='21px' />
                 </div>
-                <div className='flex sm:hidden'>
+                <div className='flex sm:hidden ml-1'>
                     <a href='/home' passHref>
                         <img src='./Assets/Logo.png' className='object-contain' height='26px' width='26px' alt='dooo' />
                     </a>
@@ -53,12 +53,12 @@ const Settings = () => {
             {/* Header settings page */}
             <div className='flex flex-col sm:flex-row gap-4 justify-center items-center my-8 mr-4'>
                 <h1 className='flex justify-center text-2xl leading-9 m-auto text-[#1E1E1F] font-[700]'>Account Settings</h1>
-                <button className='mr-[40px] px-8 bg-[#E1FFF2] w-full sm:w-auto text-center rounded py-2 text-[#31B37D] text-[900] mr-2'>SAVE</button>
+                <button className='sm:mr-[90px] sm:mt-1 mt-4 m-auto px-8 bg-[#E1FFF2] w-[100%] sm:w-auto text-center rounded py-2 text-[#31B37D] text-[900]'>SAVE</button>
             </div>
 
-            <div className='flex flex-col lg:grid lg:grid-cols-3 mr-4 border-2 border-l-0'>
+            <div className='flex flex-col grid grid-cols-3 mr-4 border-2 border-l-0'>
                 {/* //Left */}
-                <div className='col-span-1 gap-2 border-l-[1px] border-black'>
+                <div className='lg:col-span-1 col-span-3 gap-2 border-l-[1px] border-black'>
                     {/* Enabled resolutions */}
                     <div className=''>
                         <div className='flex justify-between items-center bg-black p-2'>
@@ -66,24 +66,33 @@ const Settings = () => {
                             <MdKeyboardArrowRight className='text-white' size={25} />
                         </div>
                         <div className='sm:grid sm:grid-cols-2 lg:grid-cols-3'>
-                            <div className="col-span-2">
-                            <Resolution value1={'240p (352 x 240)'} value2={'600 Kbps'} checked={true} />
-                            <Resolution value1={'360p (640 x 360)'} value2={'800 Kbps'} checked={true} />
-                            <Resolution value1={'480p (842 x 480)'} value2={'1400 Kbps'} checked={true} />
-                            <Resolution value1={'720p (1280 x 720)'} value2={'2800 Kbps'} checked={true} />
-                            </div>
-                            <hr className='my-2 sm:col-span-2 lg:col-span-3 border-gray-600 border-t-[1px]' />
-                            <div className="col-span-2">
-                                <Resolution value1={'1080p (1920 x 1080)'} value2={'5000 Kbps'} checked={true} />
-                            </div>
-                            <div className='flex justify-end mr-2 col-span-1'>
-                                <div className='bg-[#EDD038] h-9 w-9'>
+                            <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+                                <div className="col-span-1">
+                                    <Resolution value1={'240p (352 x 240)'} value2={'600 Kbps'} checked={true} />
+                                    <Resolution value1={'360p (640 x 360)'} value2={'800 Kbps'} checked={true} />
+                                </div>
+                                <div className="col-span-1">
+                                    <Resolution value1={'480p (842 x 480)'} value2={'1400 Kbps'} checked={true} />
+                                    <Resolution value1={'720p (1280 x 720)'} value2={'2800 Kbps'} checked={true} />
                                 </div>
                             </div>
-                            <div className="col-span-2">
+                            <hr className='my-2 sm:col-span-2 lg:col-span-3 border-gray-600 border-t-[1px]' />
+                            <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+                                <div className="col-span-1">
+                                    <Resolution value1={'1080p (1920 x 1080)'} value2={'5000 Kbps'} checked={true} />
+                                </div>
+                                <div className="col-span-1">
+                                    <div className='flex justify-end mr-2 col-span-1'>
+                                        <div className='bg-[#EDD038] h-9 w-9'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <Resolution value1={'1440p (2560 x 1440)'} value2={'8000 Kbps'} checked={false} />
-                            <Resolution value1={'240p (3842 x 2160)'} value2={'13,000 Kbps'} checked={false} />
+                            <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+
+                                <Resolution value1={'1440p (2560 x 1440)'} value2={'8000 Kbps'} checked={false} />
+                                <Resolution value1={'240p (3842 x 2160)'} value2={'13,000 Kbps'} checked={false} />
                             </div>
 
                         </div>
@@ -150,12 +159,15 @@ const Settings = () => {
                                 <p className='text-xs text-[#787C87]'>to automatically display VAST based ads in your videos.</p>
                             </div>
 
-                            <div className='flex flex-col justify-between mt-1 px-2 col-span-1'>
+                            <div className='flex flex-col px-2 col-span-1 my-6'>
                                 <div className='flex items-center gap-3'>
-                                    <h1 className='font-bold'>VI.AI publisher ID</h1> <CgDanger size={15} />
+                                    <h1 className='font-bold'>VAST tag URL</h1>
+                                    <CgDanger />
                                 </div>
-                                <SaveButton placeholder={'Enter VI.AI publisher id here'} />
+                                <SaveButton placeholder={'Enter VAST tag URL here'} />
+                                
                             </div>
+
                             <div className='bg-[#EDD038] h-9 w-9 absolute right-0 top-0 m-2'>
                             </div>
                         </div>
@@ -196,7 +208,7 @@ const Settings = () => {
                     </div>
                 </div>
                 {/* //Right */}
-                <div className='col-span-2 gap-2 border-l-2'>
+                <div className='lg:col-span-2 col-span-3 gap-2 border-l-2'>
                     {/* Team Accounts */}
                     <div>
                         <div className='flex justify-between items-center bg-[#CAEBF2] p-2'>
@@ -262,7 +274,7 @@ const Settings = () => {
                             <div className='items-center gap-2 grid grid-cols-4'>
                                 <div className='col-span-2'>
 
-                                <Input name={''} placeholder={'Enter your domain'} type={'text'} onChange={handleChange} id={''} value={''} />
+                                    <Input name={''} placeholder={'Enter your domain'} type={'text'} onChange={handleChange} id={''} value={''} />
                                 </div>
                                 <button className='col-span-1 px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Add</button>
                             </div>
@@ -311,7 +323,7 @@ const Settings = () => {
                             <MdKeyboardArrowRight size={25} />
                         </div>
                         <div className='w-[95%] grid grid-cols-1 sm:pr-10 sm:grid-cols-3 justify-center sm:justify-between items-center sm:items-start gap-2 my-4 md:mx-4 relative'>
-                            <div className="col-span-1 w-full sm:w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center">
+                            <div className="col-span-1 w-full sm:w-[226px] h-[58px] bg-[#EBEBEB] border-[2px] border-[#323232] border-dashed flex justify-center mt-[55px] sm:mt-[0px]">
                                 <div className='flex flex-row justify-center m-auto items-center gap-2'>
                                     <p className='text-center'><BsFillPlusCircleFill size={30} /></p>
                                     <p className="text-xs text-center">Upload Logo</p>
@@ -353,10 +365,10 @@ const Settings = () => {
                                 <h1 className='text-[#C5C7CD]'>Gold plan (100GB) - <span className='text-[#4954CB]'>$59/onetime</span></h1>
                                 <div className='flex flex-row gap-2 items-center'>
 
-                                <Toggle />
-                                <BsPencilFill size={20} />
-                                <RiDeleteBin5Line size={20} />
-                                <RiShoppingCartLine size={20} />
+                                    <Toggle />
+                                    <BsPencilFill size={20} />
+                                    <RiDeleteBin5Line size={20} />
+                                    <RiShoppingCartLine size={20} />
                                 </div>
                             </div>
                         </div>
@@ -404,8 +416,8 @@ const Settings = () => {
                                     <h1 className='font-bold text-md'>Add User</h1>
                                     <hr className='w-[30%] border-t-black border-t-2 mt-2' />
                                 </div>
-                                <form className='grid grid-cols-3 gap-2 relative'>
-                                    <div className='col-span-2'>
+                                <form className='grid grid-cols-9 gap-2 relative'>
+                                    <div className='sm:col-span-6 col-span-8'>
                                         <div className='flex sm:flex-row flex-col gap-2 justify-between'>
                                             <Input name={''} placeholder={'Enter email address'} type={'text'} onChange={handleChange} id={''} value={''} />
                                             <Input name={''} placeholder={'Enter password'} type={'text'} onChange={handleChange} id={''} value={''} />
@@ -422,8 +434,8 @@ const Settings = () => {
                                             <button className='px-4 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Add</button>
                                         </div>
                                     </div>
-                                    <div>
-                                    <RiDeleteBin5Line className='mt-3 mx-1 cursor-pointer' size={25} />
+                                    <div className='col-span-1 sm:col-span-3'>
+                                        <RiDeleteBin5Line className='mt-3 mx-1 cursor-pointer' size={25} />
                                     </div>
                                 </form>
                             </div>
@@ -432,8 +444,8 @@ const Settings = () => {
                                     <h1 className='font-bold text-md'>Add Pricing Plan</h1>
                                     <hr className='w-[30%] border-t-black border-t-2 mt-2' />
                                 </div>
-                                <form className='grid grid-cols-3 gap-2 relative'>
-                                    <div className='col-span-2'>
+                                <form className='grid grid-cols-9 gap-2 relative'>
+                                    <div className='sm:col-span-6 col-span-8'>
                                         <div className='flex sm:flex-row flex-col gap-2'>
                                             <Input name={''} placeholder={'Enter plan name'} type={'text'} onChange={handleChange} id={''} value={''} />
                                         </div>
@@ -455,13 +467,13 @@ const Settings = () => {
                                             <button className='px-6 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded'>Add</button>
                                         </div>
                                     </div>
-                                    <div className="col-span-1">
-                                    <BiCamera className='mt-3 mx-1 cursor-pointer' size={25} />
+                                    <div className="col-span-1 sm:col-span-3">
+                                        <BiCamera className='mt-3 mx-1 cursor-pointer' size={25} />
                                     </div>
 
                                 </form>
                             </div>
-                            <div className='flex flex-col'>
+                            <div className='flex flex-col mt-4 sm:mt-2'>
                                 <div>
                                     <h1 className='font-bold text-md'>Setup Payment Gateways</h1>
                                     <hr className='w-[30%] border-t-black border-t-2 mt-2' />
@@ -489,7 +501,7 @@ const Settings = () => {
                             <h1 className='font-[700] text-lg'>Usage Stats</h1>
                             <MdKeyboardArrowRight size={25} />
                         </div>
-                        <div className='flex sm:flex-row flex-col gap-7 my-8 px-4'>
+                        <div className='flex flex-row gap-7 my-8 px-4'>
                             <div>
                                 <h1 className='font-bold'>Total Videos</h1>
                                 <h1 className='font-bold'>Bandwidth Used</h1>
@@ -505,17 +517,17 @@ const Settings = () => {
                             </div>
                         </div>
                         <div className='grid grid-cols-3 gap-2 px-4 relative selctHieght'>
-                            <div className="col-span-2 grid gap-2 grid-cols-4">
+                            <div className="sm:col-span-2 col-span-3 grid gap-2 grid-cols-4">
                                 <div className='col-span-3'>
                                     <Select name={'Switch your plan'} />
                                 </div>
                                 <div className='col-span-1 flex justify-end'>
-                                    <button className='px-6 py-2 text-white w-full sm:w-auto bg-[#1E1E1F] font-[600] rounded mt-1'>Change</button>
-                                </div>
-                                <p className='text-sm text-[#6997DC] sm:col-span-4 col-span-2'>If you will downgrade your plan, then all latest videos exceeding the storage
+                                    <button className='sm:px-6 my-2 px-2 py-2 text-white bg-[#1E1E1F] font-[600] rounded mt-1'>Change</button>
+                                </div> 
+                                <p className='text-sm text-[#6997DC] sm:col-span-3 col-span-4'>If you will downgrade your plan, then all latest videos exceeding the storage
                                     limit of your new plan will automatically get removed. So remove un-wanted
                                     videos before changing the plan to avoid any inconvenience.
-                                </p>    
+                                </p>
                             </div>
                         </div>
 
@@ -572,11 +584,10 @@ const Settings = () => {
                         </div>
                         <br />
                         <div className='grid grid-cols-5 mb-8 px-4'>
-                            <div className="col-span-4 grid grid-cols-2 gap-7">
-                                    <button className='h-[45px] sm:col-span-1 col-sm-2 px-6 py-2 w-full sm:w-auto text-white bg-[#1E1E1F] font-[600] rounded mt-1 items-center whitespace-nowrap'>Delete account permanently</button>
-                                    <p className='sm:col-span-1 col-sm-2 text-base'><span className='text-[#EE4A4F] font-bold'>Warning message:</span> I understand that all of my videos will be permanently removed. (show this as a popup)</p> 
+                            <div className="sm:col-span-4 col-span-5 grid grid-cols-2 gap-7">
+                                <button className='h-[45px] sm:col-span-1 col-span-2 col-sm-2 px-6 py-2 w-full sm:w-auto text-white bg-[#1E1E1F] font-[600] rounded mt-1 items-center whitespace-nowrap'>Delete account permanently</button>
+                                <p className='sm:col-span-1 col-span-2 text-base'><span className='text-[#EE4A4F] font-bold'>Warning message:</span> I understand that all of my videos will be permanently removed. (show this as a popup)</p>
                             </div>
-                           
                         </div>
                     </div>
                 </div>

@@ -67,9 +67,9 @@ const Form = () => {
                 <h1 className="text-white mx-8 leading-[62px] text-[50px] font-bold md:font-extrabold font-['Rota']">Register Your Account</h1>
                 <p className="text-[#999A9C] mx-8 my-3 leading-7 font-normal font-['Rota'] f-a-p">Choose from 130,000 online video courses with new additions published every second month</p>
             </div>
-            <div className="flex flex-col-reverse md:flex md:flex-row justify-between my-8 f-a-div">
+            <div className="flex flex-col sm:flex-col-reverse lg:flex lg:flex-row justify-between my-8 f-a-div">
                 <div className="mx-6 sm:mx-8 md:mx-2 md:w-full">
-                    <form action="" className="md:mr-6 md:ml-32 lg:mr-12 lg:ml-48">
+                    <form action="" className=" sm:mx-auto sm:w-[80%] w-full lg:ml-12 lg:mr-48">
                         <Input name={"username"} placeholder={"User Name"} type={"text"} onChange={(e) => setUserName(e.target.value)} id={"user-name"} />
                         <Input name={"email"} placeholder={"Email"} type={"email"} onChange={(e) => setEmail(e.target.value)} id={"email"} />
                         <Input name={"pin"} placeholder={"password"} type={"password"} onChange={(e) => setPassword(e.target.value)} id={"pass-word"} />
@@ -80,9 +80,9 @@ const Form = () => {
                 <div className="flex justify-center items-center m-4">
                     <h1 className="text-[#999A9C] leading-10 f-divider">/</h1>
                 </div>
-                <div className="mx-2 sm:mx-8 md:mx-2 md:w-full">
-                    <div className="md:ml-6 md:mr-32 lg:ml-12 lg:mr-48">
-                        <div className="py-2 px-4">
+                <div className="mx-6 sm:mx-8 md:mx-2 md:w-full">
+                    <div className="sm:mx-auto sm:w-[80%] w-full lg:ml-12 lg:mr-48">
+                        <div className="py-1 px-4">
                             <button className="w-full inline-flex p-[1px] items-center justify-center overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-r from-[#9052A5] to-[#F76E2E]">
                                 <span className="w-full inline-flex py-4 px-4 bg-[#161616] text-white rounded-md med-font">
                                     <BsGoogle size={20} className="float-left mr-1 md:mr-1.5 lg:mr-3 " />

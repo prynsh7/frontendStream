@@ -34,7 +34,7 @@ const Video = () => {
     }
 
     return (
-        <div className="mt-9 w-[95%] ml-auto Video">
+        <div className="mt-9 sm:w-[95%] Video">
             {/* <SideNav stylevalue={styleValue} /> */}
             {/* Nav */}
             <div className='flex flex-row items-center gap-1 float-left absolute top-5 left-0 sm:hidden mx-8'>
@@ -49,11 +49,11 @@ const Video = () => {
 
             </div >
 
-            {/* Header --> Loader and camcel button */}
-            <div className="grid justify-items-stretch mx-8">
+            {/* Header --> Loader and cancel button */}
+            <div className="grid mx-8 mt-[100px] sm:mt-2">
                 <div className="flex sm:items-center flex-col sm:flex-row sm:justify-around">
-                    <div className="w-full sm:w-[35%] rounded-full justify-self-center items-center">
-                        <div className=" bg-[#000000] w-[700px] h-[23px] text-xs font-medium text-white text-center p-2 leading-none rounded-full">Uploading 45%.........30 seconds left!</div>
+                    <div className="w-full sm:ml-auto sm:mr-5 sm:w-[80%] rounded-full justify-self-center items-center">
+                        <div className=" bg-[#000000] w-full h-[23px] text-xs font-medium text-white text-center p-2 leading-none rounded-full">Uploading 45%.........30 seconds left!</div>
                     </div>
                     <div className="sm:justify-self-start">
                         <button className="rounded-full w-full sm:w-auto border-[1px] border-[#787C87] text-[#1E1E1F] py-1 px-6 my-3 bg-gradient-to-b from-[#F7F7F7] to-[#D6D7D9]">Cancel</button>
@@ -61,14 +61,14 @@ const Video = () => {
                 </div>
             </div>
 
-            <div className="lg:grid lg:grid-cols-2 lg:divide-x-2 divide-black mt-4">
+            <div className="grid lg:grid-cols-2 grid-cols-1  divide-black mt-4">
                 {/* COLUMN 1 --> Left */}
-                <div className="col-span-1 mb-8 lg:mb-0 pl-[20px] pr-[40px] mt-0">
+                <div className="col-span-1 mb-8 lg:mb-0 lg:pl-[20px] lg:pr-[40px] mt-0">
                     <div className="mx-8 mt-0">
                         <div className="inputMargin">
                             <Input name={""} placeholder={"Enter video title here"} type={"text"} onChange={handleChange} id={""} value={""} />
                         </div>
-                        <div className="flex flex-wrap justify-center sm:flex-nowrap gap-2 my-2">
+                        <div className="flex flex-wrap justify-between sm:flex-nowrap gap-2 my-2">
                             <div className="flex justify-center items-center w-24 sm:flex-grow flex-col h-[66px] border-[1px] border-dashed">
                                 <p className="text-center">
                                     <img src="./Assets/thumbnail-vector.png" height='18px' width='18px' alt='thumbnail' />
@@ -88,6 +88,28 @@ const Video = () => {
                                 <p className="text-xs text-center">Use Current Frame</p>
                             </div>
                         </div>
+
+
+                        {/* select player theme */}
+                        <h2 className="mt-5 font-bold">Select Player Themes</h2>
+                        <div className="grid grid-cols-5 gap-2 my-2">
+                            <div className="col-span-1 flex justify-center items-center text-3xl border-dashed w-full border-[1px] h-[66px]">
+                                <BsPlay/>
+                            </div>
+                            <div className="col-span-1 flex justify-center items-center text-3xl border-dashed w-full border-[1px] h-[66px]">
+                                <BsPlay/>
+                            </div>
+                            <div className="col-span-1 flex justify-center items-center text-3xl border-dashed w-full border-[1px] h-[66px]">
+                                <BsPlay/>
+                            </div>
+                            <div className="col-span-1 flex justify-center items-center text-3xl border-dashed w-full border-[1px] h-[66px]">
+                                <BsPlay/>
+                            </div>
+                            <div className="col-span-1 flex justify-center items-center text-3xl border-dashed w-full border-[1px] h-[66px]">
+                                <BsPlay/>
+                            </div>
+                        </div>
+
                         {/* <PlayerTheme /> */}
                         <div>
                             <Input name={""} placeholder={"Enter password to protect the video(s) (Optional)"} type={"password"} onChange={handleChange} id={""} value={""} />
