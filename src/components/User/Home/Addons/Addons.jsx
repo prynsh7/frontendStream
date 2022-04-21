@@ -10,7 +10,7 @@ import axios from "axios"
 
 const Addons = () => {
 
-    const [addon, setAddon] = useState();
+    const [addOn, setAddOn] = useState();
 
     const getData = async () => {
         await axios.get(GET_ADDON)
@@ -31,18 +31,19 @@ const Addons = () => {
 
             var obj = {}
 
-            if (i.trial == "yes") {
+            if(i.active == true){
+            if (i.trial == "true") {
                 obj.title = i.name
-                obj.imgpath = "./Assets/water-can.png"
-                obj.btntext = `$ ${i.price}`
+                obj.imgpath= i.imgUrl
+                obj.btntext = `$ ${i.price} / month`
                 obj.description = i.description
                 obj.trialtext = '(7 Day free trial available)'
-                obj.btncolor = 'bg-[#21ABF9]'
-                obj.bgcolor = 'bg-[#EFF9FF]'
+                obj.btncolor = i.btncolor
+                obj.bgcolor = i.bgcolor
             }else{
                 obj.title = i.name
-                obj.imgpath= './Assets/hand-icon.png'
-                obj.btntext = `$ ${i.price}`
+                obj.imgpath= i.imgUrl
+                obj.btntext = `$ ${i.price} / month`
                 obj.description = i.description
                 obj.trialtext= ''
                 obj.btncolor = 'bg-[#30D38B]'
@@ -51,9 +52,9 @@ const Addons = () => {
 
             arr.push(obj)
         }
-
-        await setAddon(arr);
-
+    }
+        await setAddOn(arr);
+        console.log(arr)
     }
 
     useEffect(() => {
@@ -67,7 +68,7 @@ const Addons = () => {
             <h1 className='text-center text-2xl leading-9 font-[900] text-[#1E1E1F]'>Addons</h1>
             <h1 className='text-center text-xl font-[600] leading-6 text-[#1E1E1F]'>Get powerful addons to boost experience</h1>
             <div className='grid lg:grid-cols-2 gap-4 mx-2 md:mx-6 my-6'>
-                {addon && addon.map((element, index) => (
+                {addOn && addOn.map((element, index) => (
                     <Addon
                         key={index}
                         title={element.title}

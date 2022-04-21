@@ -46,7 +46,11 @@ const Form = () => {
                 console.log(res.data);
                 cogoToast.success("User Registered successfully");
                 setLoading(false);
-                localStorage.setItem("strAuth", res.data.token)
+                localStorage.setItem("strAuth", res.data.token);
+                localStorage.setItem("libid", res.data.libid);
+                localStorage.setItem("apikey", res.data.apikey);
+                localStorage.setItem("cdn", res.data.cdn);
+
                 navigate("/")
             })
             .catch(err => { 

@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiCamera } from 'react-icons/bi'
 import Input from '../../User/Input/Input'
 import Select from '../../User/Input/Select'
 import axios from "axios"
-import { ADD_ADDON } from '../../../Utils/apiConstant'
+import { ADD_ADDON, UPDATE_ADDON } from '../../../Utils/apiConstant'
 import cogoToast from 'cogo-toast'
 import Loader from '../../User/Loader/Loader'
 
 
 
-function AddAddon({setTrigger}) {
+function AddAddon({setTrigger, data}) {
 
     const [loading, setLoading] = useState(false)
 
@@ -38,6 +38,18 @@ function AddAddon({setTrigger}) {
     const [trial, setTrial] = useState()
     
     
+    useEffect(() => {
+        if(data){
+            setName(data.name)
+            setDescription(data.description)
+            setPrice(data.price)
+            setCoupons(data.coupons)
+            setName(data.name)
+            setName(data.name)
+
+        }
+    }, [data])
+
     
     const handleChange = async(e) => {
 
@@ -68,7 +80,36 @@ function AddAddon({setTrigger}) {
 
         setLoading(false)
 
+    }
 
+
+
+    const handleUpdate = async(e) => {
+
+        e.preventDefault()
+
+        setLoading(true)
+
+        const obj = {
+            "name": name,
+            "description": description,
+            "price": price,
+            "type": type,
+            "coupons": coupons,
+            "trial": trial,
+            "active": true
+        }
+
+        axios.put(`${UPDATE_ADDON}/${data._id}`, obj)
+        .then(res => {
+            console.log(res);
+            setTrigger(prev => !prev);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
+        setLoading(false)
 
     }
 
@@ -109,7 +150,7 @@ function AddAddon({setTrigger}) {
                         <span className='text-xs whitespace-nowrap text-black font-semibold'>Make it private and don&apos;t show this within user panel</span>
                     </div>
                     <div className='flex items-start my-4'>
-                        <button className='px-6 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded' onClick={(e) => handleChange(e)} >Add</button>
+                        {data? <button className='px-6 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded' onClick={(e) => handleUpdate(e)} >Update</button>:<button className='px-6 py-2 text-[#6075DA] bg-[#EDF5FF] font-[700] rounded' onClick={(e) => handleChange(e)} >Add</button>}
                     </div>
                 </div>
             </form>

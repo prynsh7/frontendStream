@@ -25,8 +25,8 @@ const Addon = (props) => {
                     </div>
 
                 </form>
-                <div className="relative w-32 h-[100%] ">
-                    <img src={props.imgpath} alt="image" className="absolute flex-1 object-contain" layout='fill' />
+                <div className="flex relative w-32 h-[100%] ">
+                    <img src={props.imgpath} alt="image" className=" flex-1 object-contain" layout='fill' />
                 </div>
             </div>
         </div>

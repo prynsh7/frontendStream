@@ -4,14 +4,25 @@ import Search from './Inputs/Search'
 import TableData from './TableData'
 import EmbedButton from './Inputs/EmbedButton'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from "axios"
 import SideNav from '../SideNav/Index'
 import './Videos.scss'
 import { ImCross } from "react-icons/im";
 import Input from '../Input/Input'
 import Select from '../Input/Select'
+import Loader from '../Loader/Loader'
+
 
 const VideosList = () => {
+
+    const [libid, setlibid] = useState(localStorage.getItem('libid'));
+    const [apikey, setapikey] = useState(localStorage.getItem('apikey'));
+    const [cdn, setCdn] = useState(localStorage.getItem('cdn'));
+    const [loading, setLoading] = useState(false)
+    const [videos, setVideos] = useState();
+
+
     const router = useNavigate()
     const [nav, setNav] = useState(false)
 
@@ -21,12 +32,41 @@ const VideosList = () => {
 
     const styleValue = nav ? 'none' : 'hidden'
 
+    const GetAll = async () => {
+
+        setLoading(true)
+
+        await axios
+            .get(`http://video.bunnycdn.com/library/${libid}/videos`, {
+                headers: {
+                    Accept: 'application/json',
+                    libraryId: libid,
+                    AccessKey: apikey,
+                }
+            }
+            ).then(res => {
+                setVideos(res.data.items);
+            })
+        
+        setLoading(false)
+
+    }
+
+
+    useEffect(() => {
+    
+        GetAll();
+    
+    }, [])
+
+
     return (
         <div className='relative Videos h-[100vh] '>
             <SideNav stylevalue={styleValue} />
 
             <div className="rounded-t mb-0 px-4 py-3 border-0 relative">
                 {/* Nav */}
+                <Loader loading={loading} />
                 <div className='flex flex-row items-center gap-1 float-left absolute top-4 left-4 sm:hidden'>
                     <div onClick={showSideNav} className='flex sm:hidden'>
                         <img src='./Assets/home-bar.png' alt='bars' height='16px' width='21px' />
@@ -87,21 +127,21 @@ const VideosList = () => {
 
                                 <div className="col-span-3 grid grid-cols-6 px-5 pr-0">
                                     <div className="col-span-5 borderDot">
-                                        <Input placeholder="Embed This Playlist"/>
+                                        <Input placeholder="Embed This Playlist" />
                                     </div>
                                     <div className="col-span-1 flex justify-center items-center">
                                         <div className='border p-3'>
-                                        <ImCross/>
+                                            <ImCross />
                                         </div>
                                     </div>
                                     <div className="col-span-6 selectHeight">
                                         <Select name="Player Name" />
                                     </div>
                                     <div className="col-span-6 selectHeight">
-                                        <Select name="Playlist Name"/>
+                                        <Select name="Playlist Name" />
                                     </div>
                                     <div className="col-span-4">
-                                    <button className='w-full px-6 py-2 text-white bg-[#1E1E1F] font-[600] rounded mt-1'>Copy Embeded Code</button>
+                                        <button className='w-full px-6 py-2 text-white bg-[#1E1E1F] font-[600] rounded mt-1'>Copy Embeded Code</button>
                                     </div>
 
                                 </div>
@@ -123,7 +163,16 @@ const VideosList = () => {
                                 </thead>
 
                                 <tbody>
-                                    <TableData id={1} thumbnail={'/Assets/space.png'} title={'Killer player sales Video'} date={'Feb 17, 2021'} views={231} avgViewDuration={'0:11 (67.2%)'} avgPercentViewed={'0:20 (87.3%)'} />
+
+                                {
+                                    videos ? videos.map((data, key) => {
+
+                                    return <TableData id={8} thumbnail={'/Assets/space.png'} title={data.title} date={'Feb 17, 2021'} views={data.views} avgViewDuration={'0:11 (67.2%)'} avgPercentViewed={'0:20 (87.3%)'} />
+
+                                    }) : null
+                                }
+
+                                    
                                     <TableData id={8} thumbnail={'/Assets/space.png'} title={'Killer player sales Video'} date={'Feb 17, 2021'} views={231} avgViewDuration={'0:11 (67.2%)'} avgPercentViewed={'0:20 (87.3%)'} />
 
                                 </tbody>

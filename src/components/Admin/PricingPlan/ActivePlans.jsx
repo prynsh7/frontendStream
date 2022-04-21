@@ -4,14 +4,15 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { BsPencilFill } from 'react-icons/bs'
 import { RiDeleteBin5Line, RiShoppingCartLine } from 'react-icons/ri'
-import { DELETE_ADDON, GET_ADDON } from '../../../Utils/apiConstant'
+import { DELETE_ADDON, GET_ADDON, UPDATE_ADDON } from '../../../Utils/apiConstant'
 import Loader from '../../User/Loader/Loader'
-import Toggle from '../../User/Toogle/Toogle'
+import Toggle from './ToogleAddon'
 
 
-function ActivePlans({ trigger, setTrigger, showAddonForm, showPlanForm }) {
+function ActivePlans({ trigger, setTrigger, showAddonForm, showPlanForm, setAddonData }) {
     const [addOn, setAddon] = useState();
     const [pricingPlan, setPricingPlan] = useState();
+    const [active, setActive] = useState();
 
     const [loading, setLoading] = useState(false);
 
@@ -28,6 +29,20 @@ function ActivePlans({ trigger, setTrigger, showAddonForm, showPlanForm }) {
     useEffect(() => {
         getData()
     }, [trigger])
+
+
+    const handleUpdate = (data) => {
+
+        axios.put(`${UPDATE_ADDON}/${data._id}`, {active: !data.active})
+        .then(res => {
+            console.log(res);
+            setTrigger(prev => !prev);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
+    }
 
 
     const deletePlan = async (e, id) => {
@@ -70,7 +85,7 @@ function ActivePlans({ trigger, setTrigger, showAddonForm, showPlanForm }) {
                     </h1>
                         
                     <div className='flex justify-between items-center gap-2'>
-                        {data.active ? <Toggle active={true}/> : <Toggle active={false}/> }   
+                        <Toggle active={data.active} />    
                         <BsPencilFill size={20} />
                         <RiDeleteBin5Line size={20} />
                         <RiShoppingCartLine size={20} />
@@ -93,8 +108,16 @@ function ActivePlans({ trigger, setTrigger, showAddonForm, showPlanForm }) {
                                 {data.name} - <span className='text-[#4954CB]'>${data.price}/{data.type}</span>
                             </h1>
                             <div className='flex items-center justify-between gap-2'>
-                            {data.active ? <Toggle active={true}/> : <Toggle active={false}/> }   
+                            
+                            <div >
+
+                            <Toggle active={data.active}  handleChange={() => handleUpdate(data)}/>     
+                            </div>
+                            
+                                <div onClick={() => {showAddonForm('addon'); setAddonData(data)}}>
+
                                 <BsPencilFill size={20} />
+                                </div>
                                 <div onClick={(e) => deletePlan(e, data._id)}>
                                     <RiDeleteBin5Line size={20} />
                                 </div>
